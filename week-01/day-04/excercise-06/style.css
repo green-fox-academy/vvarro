@@ -1,0 +1,14 @@
+h1 {
+    padding: 0px 0px 0px 30px;
+}
+
+p {
+  size: 18px;
+  margin: 0;
+  padding: 0px 0px 0px 15px;
+}
+
+section {
+  margin: 0px 0px 10px 25px;
+  border-left: 2px solid black;
+}

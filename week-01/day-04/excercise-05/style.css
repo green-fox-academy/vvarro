@@ -1,0 +1,24 @@
+h1 {
+  color: blue;
+}
+h2 {
+  color: #e2b361;
+}
+
+ul {
+  list-style-type: square;
+  color: blue;
+}
+
+ol {
+  color: black;
+}
+
+.ulist {
+  color: black;
+  list-style-type: disc;
+}
+
+.apple {
+  color: #dc0514;
+}

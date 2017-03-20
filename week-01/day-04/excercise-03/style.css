@@ -1,0 +1,29 @@
+.backgr {
+  font-family: 'Lato', sans-serif;
+  width: 348px;
+  height: 256px;
+  border: 13px solid #4285f4;
+  margin: 3px;
+}
+
+.north {
+  width: 348px;
+  height: 128px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 128px;
+  color: #fff;
+  font-size: 36px;
+  background: #e67676;
+}
+
+.south {
+  width: 348px;
+  height: 128px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 128px;
+  color: #fff;
+  font-size: 36px;
+  background: #a9e6e6;
+}

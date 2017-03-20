@@ -1,0 +1,120 @@
+main {
+  font-family: 'Josefin Sans', sans-serif;
+  max-width: 450px;
+  margin: 0 auto;
+  line-height: 1.3em;
+}
+
+.header {
+  margin: 0 auto;
+  position: relative;
+  background-image:url("anakin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+	height: 275px;
+	width: 800px;
+}
+
+.name {
+  font-family: 'Abril Fatface', cursive;
+  position: absolute;
+  font-weight: lighter;
+  top: 170px;
+  font-size: 50px;
+}
+
+p {
+  position: relative;
+  font-size: 12px;
+  padding: 20px 30px;
+  line-height: 15px;
+}
+
+.firstquote {
+  font-size: 13px;
+  line-height: 1.7em;
+  margin: 30px 10px 0px 10px;
+}
+
+.firstword {
+  font-weight: bold;
+  font-size: 13px;
+  margin: 0;
+}
+
+ul {
+  font-size: 12px;
+  padding-left: 50px;
+  list-style-type: square;
+  margin: 0px 0px 30px 0px;
+}
+
+.firstlist {
+  font-size: 13px;
+}
+
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  position: absolute;
+  font-weight: lighter;
+  top: 160px;
+  font-size: 24px;
+  line-height: 2em;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 30px 30px;
+  margin: 0;
+}
+
+h3 {
+  font-weight: bolder;
+  font-size: 14px;
+  font-weight: 900;
+  padding: 0px 30px;
+  margin: 0;
+}
+
+h4 {
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 0px 30px;
+  margin: 0;
+}
+
+h5 {
+  font-size: 13px;
+  margin: 0;
+}
+
+blockquote {
+  font-family: 'Abril Fatface', cursive;
+  text-align: justify;
+  line-height: 1.8em;
+  margin: 0 auto;
+  width: 500px;
+  color: white;
+  padding: 40px 30px;
+  font-size: 30px;
+  background-color: #444;
+}
+
+.quote {
+  font-size: 90px;
+  margin: -30px -30px;
+  text-align: left;
+  padding: -50px;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-color: black;
+}
