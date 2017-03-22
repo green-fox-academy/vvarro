@@ -6,6 +6,7 @@ public class Kutya {
     StringBuilder am = new StringBuilder("kuty");
     appendA(am);
   }
+
   public static void appendA(StringBuilder am) {
     am.append("a");
     System.out.println(am);

@@ -8,6 +8,6 @@ public class Doubling {
 
   public static void doubling() {
     int ak = 123;
-    System.out.println(2*ak);
+    System.out.println(2 * ak);
   }
 }
