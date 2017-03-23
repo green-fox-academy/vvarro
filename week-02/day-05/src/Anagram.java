@@ -13,8 +13,6 @@ public class Anagram {
     String secondInput = secondScanner.nextLine();
     boolean result = anagram(firstInput, secondInput);
     System.out.println(result);
-    System.out.println(result);
-    System.out.println(result);
   }
 
   public static boolean anagram(String firstInput, String secondInput) {
@@ -23,7 +21,7 @@ public class Anagram {
     for (int i = length - 1; i >= 0; i--) {
       reversedFirst = reversedFirst + firstInput.charAt(i);
     }
-    if (reversedFirst == secondInput) {
+    if (reversedFirst.equals(secondInput)) {
       return true;
     } else {
       return false;
