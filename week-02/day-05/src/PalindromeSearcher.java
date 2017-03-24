@@ -12,6 +12,7 @@ public class PalindromeSearcher {
     for (char c : Input.toCharArray()) {
       chars.add(c);
     }
+    //Create palindroms
     ArrayList<String> palindrome = new ArrayList<String>();
     String in = "";
     char first = ' ';
@@ -26,6 +27,7 @@ public class PalindromeSearcher {
         }
       }
     }
+    //Remove duplicates
     for (int k = 0; k < palindrome.size(); k++) {
       for (int l = k + 1; l < palindrome.size(); l++) {
         if (palindrome.get(k).equals(palindrome.get(l))) {
@@ -34,7 +36,23 @@ public class PalindromeSearcher {
         }
       }
     }
-    System.out.println(palindrome);
+    //Remove not palindroms
+    String sPalindrom = "";
+    char pFirst = ' ';
+    char pLast = ' ';
+    for (int i = 0; i < palindrome.size(); i++) {
+      sPalindrom = palindrome.get(i).toString();
+      for (int j = 0; j < sPalindrom.length(); j++) {
+        pFirst = sPalindrom.charAt(j);
+        for (int k = sPalindrom.length() - 1; k >= j; k--) {
+          pLast = sPalindrom.charAt(k);
+          if (pFirst != pLast) {
+            palindrome.remove(i);
+          }
+          System.out.println(palindrome);
 
+        }
+      }
+    }
   }
 }
