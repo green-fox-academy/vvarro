@@ -8,12 +8,12 @@ public class PalindromeSearcher {
     System.out.println("Enter the text: ");
     Scanner Scanner = new Scanner(System.in);
     String Input = Scanner.nextLine();
-    ArrayList<Character> chars = new ArrayList<Character>();
-    for (char c : Input.toCharArray()) {
-      chars.add(c);
-    }
-    //Create palindroms
     ArrayList<String> palindrome = new ArrayList<String>();
+    palindromise(Input, palindrome);
+    realPalindrome(palindrome);
+      }
+
+  public static void palindromise(String Input, ArrayList palindrome) {
     String in = "";
     char first = ' ';
     char last = ' ';
@@ -24,19 +24,13 @@ public class PalindromeSearcher {
         if (first == last) {
           in = Input.substring(i, j + 1);
           palindrome.add(in);
+
         }
       }
     }
-    //Remove duplicates
-    for (int k = 0; k < palindrome.size(); k++) {
-      for (int l = k + 1; l < palindrome.size(); l++) {
-        if (palindrome.get(k).equals(palindrome.get(l))) {
-          palindrome.remove(l);
-          l--;
-        }
-      }
-    }
-    //Remove not palindroms
+  }
+
+  public static boolean realPalindrome(ArrayList palindrome) {
     String sPalindrom = "";
     char pFirst = ' ';
     char pLast = ' ';
@@ -44,15 +38,12 @@ public class PalindromeSearcher {
       sPalindrom = palindrome.get(i).toString();
       for (int j = 0; j < sPalindrom.length(); j++) {
         pFirst = sPalindrom.charAt(j);
-        for (int k = sPalindrom.length() - 1; k >= j; k--) {
-          pLast = sPalindrom.charAt(k);
-          if (pFirst != pLast) {
-            palindrome.remove(i);
-          }
-          System.out.println(palindrome);
-
+        pLast = sPalindrom.charAt(sPalindrom.length() - 1 - j);
+        if ((pFirst != pLast) && (j < sPalindrom.length() - 1 - j)) {
+          return false;
         }
       }
     }
+    return true;
   }
 }
