@@ -1,8 +1,5 @@
 import java.util.Scanner;
 
-/**
- * Created by Virág on 3/23/2017.
- */
 public class PalindromeBuilder {
   public static void main(String... args) {
     System.out.println("Enter the text: ");

@@ -7,15 +7,15 @@ public class PalindromeSearcher {
     String Input = Scanner.nextLine();
     ArrayList<String> palindrome = new ArrayList<>();
     palindrome = palindromise(Input);
-    int p = 0;
+    int outPrint = 0;
     for (int i = 0; i < palindrome.size(); i++) {
       String result = palindrome.get(i);
       if (realPalindrome(result)) {
         System.out.print("\"" + result + "\" ");
-        p = 1;
+        outPrint = 1;
       }
     }
-    if (p == 0) {
+    if (outPrint == 0) {
       System.out.print("[]");
     }
   }
