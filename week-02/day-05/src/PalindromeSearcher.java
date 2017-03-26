@@ -1,8 +1,5 @@
 import java.util.*;
 
-/**
- * Created by Virág on 3/24/2017.
- */
 public class PalindromeSearcher {
   public static void main(String[] args) {
     System.out.println("Enter the text: ");
@@ -17,23 +14,23 @@ public class PalindromeSearcher {
         System.out.print("\"" + result + "\" ");
         p = 1;
       }
-      }
-    if (p == 0 ) {
+    }
+    if (p == 0) {
       System.out.print("[]");
     }
-    }
+  }
 
-  public static ArrayList palindromise(String Input) {
+  public static ArrayList palindromise(String input) {
     ArrayList<String> palindrome = new ArrayList<String>();
     String in = "";
     char first = ' ';
     char last = ' ';
-    for (int i = 0; i < Input.length(); i++) {
-      first = Input.charAt(i);
-      for (int j = i + 1; j < Input.length(); j++) {
-        last = Input.charAt(j);
+    for (int i = 0; i < input.length(); i++) {
+      first = input.charAt(i);
+      for (int j = i + 1; j < input.length(); j++) {
+        last = input.charAt(j);
         if (first == last) {
-          in = Input.substring(i, j + 1);
+          in = input.substring(i, j + 1);
           palindrome.add(in);
         }
       }
@@ -56,3 +53,4 @@ public class PalindromeSearcher {
     return true;
   }
 }
+
