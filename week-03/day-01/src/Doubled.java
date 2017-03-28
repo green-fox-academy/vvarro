@@ -12,12 +12,21 @@ public class Doubled {
     List<String> lines = Files.readAllLines(path);
     System.out.println(lines);
     ArrayList<String> words = new ArrayList<>(lines);
+    String row = new String();
     for (int i = 0; i < lines.size(); i++) {
-      for (int j = 0; j >= i ; j++) {
-        if ((words.get(i).charAt(j)) == (words.get(i).charAt(j + 1))) {
-          System.out.print(words.get(i).charAt(j + 1));
-        }
+      words.add(lines.get(i));
+    }
+    String temp = new String();
+    for (int i = 0; i < words.size(); i++) {
+      char[] charArray = words.get(i).toCharArray();
+      temp = "";
+      for (int k = 0; k < charArray.length; k = k + 2) {
+        temp = temp + charArray[k];
       }
+      words.set(i, temp);
+    }
+    for (int i = 0; i < words.size(); i++) {
+      System.out.println(words.get(i));
     }
   }
 }
