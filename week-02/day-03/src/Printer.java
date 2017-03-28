@@ -4,8 +4,12 @@
 public class Printer {
   public static void main(String[] args) {
     String[] stringArray = {"first", "second", "third"};
+    printer(stringArray);
   }
-  public static String printer(String[] stringArray){
-    
+
+  public static void printer(String[] stringArray){
+    for (int i = 0; i < stringArray.length; i++ ) {
+      System.out.print(stringArray[i] + " ");
+    }
   }
 }
