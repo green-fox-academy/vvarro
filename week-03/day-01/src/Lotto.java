@@ -15,14 +15,10 @@ public class Lotto {
     Path path = Paths.get("day-01/otos.csv");
     List<String> lines = Files.readAllLines(path);
     System.out.println(lines);
-    String[] splitted = new String[0];
     for (String oneLine : lines) {
-      splitted = (oneLine.split(";"));
+      String[] splitted = (oneLine.split(";"));
       System.out.println(Arrays.toString(splitted));
     }
-    System.out.println(Arrays.toString(splitted));
-    ArrayList<String> numbers = new ArrayList<>();
-    numbers.addAll(Arrays.toString(splitted));
   }
 }
 
