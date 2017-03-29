@@ -23,12 +23,13 @@ public class ReversedLines {
     for (int i = 0; i < lines.size(); i++) {
       text.add(i, lines.get(i));
     }
-      int length = text.size();
-      String oriText = "";
-      for (int i = length - 1; i >= 0; i--) {
-        String[] stringText = Arrays.toString(text.get(i));
-        oriText = oriText + text.charAt(i);
+    String oriText = "";
+    String[] stringText = new String[text.size()];
+      for (int i = stringText.length - 1; i >= 0; i--) {
+        stringText[i] = text.get(i);
+        for ()
+        oriText = oriText + stringText[i].charAt(i);
+        System.out.println(oriText);
       }
-      return oriText;
-    }  }
+    }
 }
