@@ -8,7 +8,7 @@ public class CenteredSquare {
   public static void mainDraw(Graphics graphics){
     // draw a green 10x10 square to the canvas' center.
 drawSquare(graphics);
-  }
+}
 
   public static void drawSquare(Graphics graphics){
     graphics.setColor(Color.GREEN);
