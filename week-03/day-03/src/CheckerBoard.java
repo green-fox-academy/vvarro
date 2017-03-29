@@ -11,12 +11,24 @@ public class CheckerBoard {
     int tempX = 0;
     int tempY = 0;
     for (int i = 0; i < 8; i++) {
-      graphics.setColor(Color.WHITE);
-      graphics.fillRect(tempX, tempY, 37, 37);
-      tempX = tempX + 37;
-      graphics.setColor(Color.BLACK);
-      graphics.fillRect(tempX, tempY, 37, 37);
-      tempX = tempX + 37;
+      for (int j = 0; j < 4; j++) {
+        if (i % 2 == 1) {
+          graphics.setColor(Color.BLACK);
+        } else {
+          graphics.setColor(Color.WHITE);
+        }
+        graphics.fillRect(tempX, tempY, (300/8), (300/8));
+        tempX = tempX + (300/8);
+        if (i % 2 == 1) {
+          graphics.setColor(Color.WHITE);
+        } else {
+          graphics.setColor(Color.BLACK);
+        }
+        graphics.fillRect(tempX, tempY, (300/8), (300/8));
+        tempX = tempX + (300/8);
+      }
+      tempX = 0;
+      tempY = tempY + (300/8);
     }
   }
 
