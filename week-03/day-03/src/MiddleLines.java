@@ -12,7 +12,7 @@ public class MiddleLines {
   }
 
   public static void main(String[] args) {
-    JFrame jFrame = new JFrame("Drawing");
+    JFrame jFrame = new JFrame("MiddleLines");
     jFrame.setSize(new Dimension(300, 300));
     jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
     jFrame.add(new ImagePanel());
