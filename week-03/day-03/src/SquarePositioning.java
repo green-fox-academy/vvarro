@@ -11,10 +11,13 @@ public class SquarePositioning {
     // the x and y coordinates of the square's top left corner
     // and draws a 50x50 square from that point.
     // draw 3 squares with that function.
-    drawSquare();
+    drawSquare(graphics,10,20 );
+    drawSquare(graphics,40,60 );
+    drawSquare(graphics,50,70 );
   }
+  
     public static void drawSquare(Graphics graphics,int coordinateX, int coordinateY){
-      graphics.drawLine(coordinateX, coordinateY, coordinateX + 50, coordinateY);
+      graphics.drawRect(coordinateX, coordinateY,50,50);
     }
 
   //    Don't touch the code below
