@@ -3,14 +3,14 @@ import javax.swing.*;
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+
 public class Triangles {
 
-  public static void mainDraw(Graphics graphics) {
+  public static void mainDraw(Graphics graphics){
     graphics.drawLine(10, 20 , 110, 20);
     graphics.drawLine(110, 20 , 60, 70);
     graphics.drawLine(60, 70 , 10, 20);
   }
-
 
   //    Don't touch the code below
   public static void main(String[] args) {
