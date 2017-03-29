@@ -4,25 +4,25 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class SquarePositioning {
+public class CenteredBoxes {
 
-  public static void mainDraw(Graphics graphics) {
-    // create a square drawing function that takes 2 parameters:
-    // the x and y coordinates of the square's top left corner
-    // and draws a 50x50 square from that point.
+  public static void mainDraw(Graphics graphics){
+    // create a square drawing function that takes 1 parameter:
+    // the square size
+    // and draws a square of that size to the center of the canvas.
     // draw 3 squares with that function.
-    drawSquare(graphics,10,20 );
-    drawSquare(graphics,40,60 );
-    drawSquare(graphics,50,70 );
+    drawBox(graphics,10);
+    drawBox(graphics,40);
+    drawBox(graphics,70);
   }
 
-    public static void drawSquare(Graphics graphics,int coordinateX, int coordinateY){
-      graphics.drawRect(coordinateX, coordinateY,50,50);
-    }
+  public static void drawBox(Graphics graphics,int size){
+    graphics.drawRect(150-(size/2), 150-(size/2),size, size);
+  }
 
   //    Don't touch the code below
   public static void main(String[] args) {
-    JFrame jFrame = new JFrame("SquarePositioning");
+    JFrame jFrame = new JFrame("CenteredBoxes");
     jFrame.setSize(new Dimension(300, 300));
     jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
     jFrame.add(new ImagePanel());
