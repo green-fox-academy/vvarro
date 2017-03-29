@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Diagonals {
@@ -25,7 +24,6 @@ public class Diagonals {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-
     }
   }
 }
