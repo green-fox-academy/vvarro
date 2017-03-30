@@ -5,32 +5,23 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class YellowSquares {
   public static void mainDraw(Graphics graphics) {
-    grid(graphics, 0, 0, 300);
-  }
-
-  public static void grid(Graphics graphics, int x, int y, int size) {
     graphics.setColor(Color.YELLOW);
-    graphics.fillRect(x, y, size, size);
-    graphics.setColor(Color.BLACK);
-    for (int i = 0; i < 3; i++) {
-      for (int j = 0; j < 3; j++) {
-        graphics.drawRect(j * (size / 3), i * (size / 3), size/3, size/3);
-      }
-    }
+    graphics.fillRect(0, 0, 500, 500);
+    drawGrid(graphics, 0, 0, 500, 5);
   }
 
-  public static void emptyGrid(Graphics graphics, int x, int y, int size) {
-    graphics.setColor(Color.BLACK);
-    graphics.fillRect(x, y, size, size);
+  public static void drawGrid(Graphics graphics, int x, int y, int size, int position) {
+    if (position > 0) {
+      for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+          if ((3 * i + j + 1) % 2 == 1) {
+            graphics.setColor(Color.BLACK);
+            graphics.drawRect(size / 3 * j + x, size / 3 * i + y, size / 3, size / 3);
+          } else {
+            drawGrid(graphics,size / 3 * j + x, size / 3 * i + y, size / 3, position-1);
+          }
+        }
       }
-
-  public static int drawGrid(int x, int y, int size, int position, Graphics graphics) {
-    if (position % 2 == 1) {
-      graphics.fillRect(x, y, size, size);
-      grid(graphics, 0, 0, 300);;
-    } else if {
-      System.out.println(num);
-      return drawGrid(size+size/3, );
     }
   }
 
@@ -44,13 +35,12 @@ public class YellowSquares {
     jFrame.setVisible(true);
   }
 
-  static class ImagePanel extends JPanel {
-    @Override
-    protected void paintComponent(Graphics graphics) {
-      super.paintComponent(graphics);
-      mainDraw(graphics);
-    }
+static class ImagePanel extends JPanel {
+  @Override
+  protected void paintComponent(Graphics graphics) {
+    super.paintComponent(graphics);
+    mainDraw(graphics);
   }
-
+}
 
 }
