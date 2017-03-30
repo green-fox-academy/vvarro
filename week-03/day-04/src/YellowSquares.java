@@ -19,6 +19,21 @@ public class YellowSquares {
     }
   }
 
+  public static void emptyGrid(Graphics graphics, int x, int y, int size) {
+    graphics.setColor(Color.BLACK);
+    graphics.fillRect(x, y, size, size);
+      }
+
+  public static int drawGrid(int x, int y, int size, int position, Graphics graphics) {
+    if (position % 2 == 1) {
+      graphics.fillRect(x, y, size, size);
+      grid(graphics, 0, 0, 300);;
+    } else if {
+      System.out.println(num);
+      return drawGrid(size+size/3, );
+    }
+  }
+
   //    Don't touch the code below
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("YellowSquares");
