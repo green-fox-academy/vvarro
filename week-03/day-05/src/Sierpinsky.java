@@ -6,14 +6,16 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Sierpinsky {
   public static void mainDraw(Graphics graphics) {
 
-    drawBox(graphics, 50, 50, 400);
+    drawBox(graphics, 5, 5, 700);
   }
 
   public static void drawBox(Graphics graphics, int x, int y, int side) {
     int small = side / 3;
+    graphics.setColor(Color.WHITE);
     graphics.fillRect(x, y, side, side);
+    graphics.setColor(Color.BLACK);
     graphics.fillRect(x + small, y + small, small - 1, small - 1);
-    if (small >= 2) {
+    if (small >= 1) {
       drawBox(graphics, x, y, small);
       drawBox(graphics, x + small, y, small);
       drawBox(graphics, x + 2 * small, y, small);
