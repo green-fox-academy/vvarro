@@ -6,8 +6,23 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Sierpinsky {
   public static void mainDraw(Graphics graphics) {
 
-    drawTree(graphics, 150, 210, 40, 20, 10, 6);
-    graphics.drawLine(150, 210+40, 150, 210);
+    drawBox(graphics, 50, 50, 400);
+  }
+
+  public static void drawBox(Graphics graphics, int x, int y, int side) {
+    int small = side / 3;
+    graphics.fillRect(x, y, side, side);
+    graphics.fillRect(x + small, y + small, small - 1, small - 1);
+    if (small >= 2) {
+      drawBox(graphics, x, y, small);
+      drawBox(graphics, x + small, y, small);
+      drawBox(graphics, x + 2 * small, y, small);
+      drawBox(graphics, x, y + small, small);
+      drawBox(graphics, x + 2 * small, y + small, small);
+      drawBox(graphics, x, y + 2 * small, small);
+      drawBox(graphics, x + small, y + 2 * small, small);
+      drawBox(graphics, x + 2 * small, y + 2 * small, small);
+    }
   }
 
   //    Don't touch the code below
