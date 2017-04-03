@@ -1,6 +1,4 @@
-/**
- * Created by Virág on 4/3/2017.
- */
+
 public class main {
   public static void main(String[] args) {
     PostIt postIt1 = new PostIt("orange", "Idea1", "blue");
