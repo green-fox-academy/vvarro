@@ -6,9 +6,9 @@ public class StringsAgain {
   public static void main(String[] args) {
     System.out.print("Please give me a text:");
     Scanner scanner = new Scanner(System.in);
-    String text = scanner.nextLine();
+    String textRep = scanner.nextLine();
     char charX = 'x';
-    System.out.println(replace(text, charX));
+    System.out.println(replace(textRep, charX));
   }
 
   public static String replace(String textRep, char charX) {
