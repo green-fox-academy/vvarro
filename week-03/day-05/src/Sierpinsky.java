@@ -1,20 +1,23 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.TimeUnit;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Sierpinsky {
-  public static void mainDraw(Graphics graphics) {
+  public static void mainDraw(Graphics graphics) throws InterruptedException {
 
     drawBox(graphics, 5, 5, 700);
+    TimeUnit.SECONDS.sleep(3);
   }
 
-  public static void drawBox(Graphics graphics, int x, int y, int side) {
+  public static void drawBox(Graphics graphics, int x, int y, int side) throws InterruptedException {
     int small = side / 3;
     graphics.setColor(Color.WHITE);
     graphics.fillRect(x, y, side, side);
     graphics.setColor(Color.BLACK);
     graphics.fillRect(x + small, y + small, small - 1, small - 1);
+    TimeUnit.SECONDS.sleep(1);
     if (small >= 1) {
       drawBox(graphics, x, y, small);
       drawBox(graphics, x + small, y, small);
@@ -41,7 +44,11 @@ public class Sierpinsky {
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
-      mainDraw(graphics);
+      try {
+        mainDraw(graphics);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     }
   }
 

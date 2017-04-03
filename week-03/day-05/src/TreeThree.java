@@ -6,7 +6,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class TreeThree {
 
   public static void mainDraw(Graphics graphics) {
-    drawTree(120.0,200.0,200.0,90.0, graphics);
+    drawTree(200.0,200.0,20.0,30.0, graphics);
   }
 
   public static void drawTree(double x0,double y0,double len,double angle,Graphics graphics){

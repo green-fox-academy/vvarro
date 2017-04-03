@@ -10,14 +10,14 @@ public class RotateTree {
   }
 
   public static void drawTree(Graphics graphics, int x, int y, int lenght, int moveX, int moveY, int repeat) {
-      graphics.drawLine(x, y, x - moveX, y - lenght + moveY);//bal
-      graphics.drawLine(x, y, x, y - lenght );//kozepso
-      graphics.drawLine(x, y, x + moveX, y - lenght + moveY);//jobb
+    graphics.drawLine(x, y, x - moveX, y - lenght + moveY);
+    graphics.drawLine(x, y, x, y - lenght);
+    graphics.drawLine(x, y, x + moveX, y - lenght + moveY);
 
-      graphics.drawLine(x - moveX, y - lenght + moveY, x - moveX*2 - moveX, y - lenght + moveY - lenght + moveY*2);//bal
-      graphics.drawLine(x - moveX, y - lenght + moveY, x-moveX-moveX, y - lenght + moveY - lenght + moveY);//kozepso
-      graphics.drawLine(x - moveX, y - lenght + moveY, x - moveX*2 + moveX , y - lenght+ moveY - lenght+moveY);//jobb
-    }
+    graphics.drawLine(x - moveX, y - lenght + moveY, x - moveX * 2 - moveX, y - lenght + moveY - lenght + moveY * 2);
+    graphics.drawLine(x - moveX, y - lenght + moveY, x - moveX - moveX, y - lenght + moveY - lenght + moveY);
+    graphics.drawLine(x - moveX, y - lenght + moveY, x - moveX * 2 + moveX, y - lenght + moveY - lenght + moveY);
+  }
 
   //    Don't touch the code below
   public static void main(String[] args) {

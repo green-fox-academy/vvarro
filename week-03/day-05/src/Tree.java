@@ -5,22 +5,23 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Tree {
   public static void mainDraw(Graphics graphics) {
-    drawTree(graphics, 150, 300, 40, 15, 10, 3);
+    drawTree(graphics, 150, 300, 15, 10, 40, 6);
     graphics.drawLine(150, 300 + 40, 150, 210);
   }
 
-  public static void drawTree(Graphics graphics, int x, int y, int moveX, int moveY, int lenght , int repeat) {
-    for (int i = 1; i < repeat; i++) {
-      graphics.drawLine(x, y, x - moveX, y - lenght + moveY);//bal
-      graphics.drawLine(x, y, x, y - lenght - 3);//kozeps1o
-      graphics.drawLine(x, y, x + moveX, y - lenght + moveY);//jobb
+  public static void drawTree(Graphics graphics, int x, int y, int moveX, int moveY, int lenght, int repeat) {
+    for (int i = 0; i < repeat; i++) {
+      graphics.drawLine(x, y, x - moveX, y - lenght + moveY);
+      graphics.drawLine(x, y, x, y - lenght );
+      graphics.drawLine(x, y, x + moveX, y - lenght + moveY);
       if (repeat > 0) {
-        drawTree(graphics, x - (i*moveX), y - (i*moveY) - (i*lenght), x -(i*2*moveX), y - (i*lenght) + (i*2*moveY), lenght - 2, repeat - 1); //bal
-        drawTree(graphics, x - (i*moveX), y - (i*moveY) - (i*lenght), x -(i*2*moveX), y - (i*lenght) + (i*2*moveY),lenght - 2, repeat - 1);//kozepso
-        drawTree(graphics, x - (i*moveX), y - (i*moveY) - (i*lenght), x -(i*2*moveX), y - (i*lenght) + (i*moveY), lenght - 2,  repeat - 1);//jobb
+        drawTree(graphics, x - moveX, y - lenght + moveY, moveX, moveY, lenght - 2, repeat - 1);
+        drawTree(graphics, x, y - lenght, moveX, moveY, lenght - 2, repeat - 1);
+        drawTree(graphics, x + moveX, y - lenght + moveY, moveX, moveY, lenght - 2, repeat - 1);
       }
     }
   }
+
 
   //    Don't touch the code below
   public static void main(String[] args) {
