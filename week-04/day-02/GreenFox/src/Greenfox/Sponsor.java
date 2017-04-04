@@ -6,12 +6,12 @@ public class Sponsor extends Person {
 
   @Override
   public void getGoal() {
-    System.out.println("Hire brilliant junior software developers.");
+    System.out.println("My goal is: Hire brilliant junior software developers.");
   }
 
   @Override
   public void introduce() {
-    System.out.println("Hi, I'm" + this.getName() + " a " + this.getAge() + "year old" + this.getGender() + " who represents " + company + " and hired " + hiredStudents + "students so far.");
+    System.out.println("Hi, I'm " + this.getName() + " a " + this.getAge() + " year old " + this.getGender() + " who represents " + company + " and hired " + hiredStudents + " students so far.");
   }
 
   public void hire() {
