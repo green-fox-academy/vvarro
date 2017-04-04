@@ -27,7 +27,19 @@ public class Garden {
   }
 
   public void water(double amount) {
-
+    System.out.println("Watering with " + amount + " water.");
+    int counter = 0;
+    for (int i = 0; i < plants.size(); i++) {
+      if (thirstyPlant(i)) {
+        counter += 1;
+      }
+    }
+    for (int i = 0; i < plants.size(); i++) {
+      if (thirstyPlant(i)){
+        double newAmount = plants.get(i).getNeedsWater() + amount/counter*plants.get(i).getWaterAmount();
+        plants.get(i).setWaterAmount(newAmount);
+      }
+    }
   }
 
   public Garden() {
