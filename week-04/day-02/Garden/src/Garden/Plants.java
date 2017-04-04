@@ -1,10 +1,17 @@
 package Garden;
 
-public class Plants {
+public class Plants extends Garden {
   public double waterAmount;
   public boolean needsWater;
   public String color;
 
+  public void thirstyPlants() {
+    int thirsty = 0;
+    for (int i = 0; i < plants.size(); i++) {
+      if (plants.get(i)
+
+    }
+  }
 
   public void watering(int water) {
     if (needsWater = true) {
@@ -26,5 +33,4 @@ public class Plants {
     this.needsWater = needsWater;
     this.color = color;
   }
-
 }
