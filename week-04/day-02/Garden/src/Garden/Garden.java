@@ -10,28 +10,27 @@ public class Garden {
     plants.add(plant);
   }
 
-  public int thirstyPlant() {
-    int numThirsty = 0;
-    for (int i = 0; i < plants.size(); i++) {
-      if (plants.get(i) instanceof Flower && plants.get(i).getNeedsWater() < 5) {
-        numThirsty += 1;
-      } else if (plants.get(i) instanceof Tree && plants.get(i).getNeedsWater() < 10) {
-        numThirsty += 1;
-      }
+  public boolean thirstyPlant(int i) {
+    if (plants.get(i) instanceof Flower && plants.get(i).getNeedsWater() < 5) {
+      return true;
+    } else if (plants.get(i) instanceof Tree && plants.get(i).getNeedsWater() < 10) {
+      return true;
+    } else {
+      return false;
     }
-    return numThirsty;
   }
 
-
-  public void addTree(Tree tree) {
-    plants.add(new Tree());
+  public void printOut() {
+    for (int i = 0; i < plants.size(); i++) {
+      System.out.println("The " + plants.get(i).getColor() + " " + plants.get(i).getName() + " " + (thirstyPlant(i) ? "needs" : "doesn't need") + " water.\n");
+    }
   }
 
-  Garden() {
-    this.plants = new ArrayList<Plants>();
+  public void water(double amount) {
+
   }
 
-  Garden(int numberOfFlowers, int numberOfTrees) {
-    this.plants = new ArrayList<Plants>();
+  public Garden() {
+    this.plants = new ArrayList<>();
   }
 }
