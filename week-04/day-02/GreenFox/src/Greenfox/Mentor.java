@@ -1,7 +1,7 @@
 package Greenfox;
 
 public class Mentor extends Person {
-  String level;
+  private String level;
 
   @Override
   public void getGoal() {

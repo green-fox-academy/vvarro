@@ -1,8 +1,8 @@
 package Greenfox;
 
 public class Sponsor extends Person {
-  String company;
-  int hiredStudents;
+  private String company;
+  private int hiredStudents;
 
   @Override
   public void getGoal() {
