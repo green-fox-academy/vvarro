@@ -7,6 +7,11 @@ public class Animal {
     thirst = 50;
   }
 
+  public Animal(int hunger, int thirst) {
+    this.hunger = hunger;
+    this.thirst = thirst;
+  }
+
   public void eat() {
     hunger -= 1;
   }
@@ -18,5 +23,9 @@ public class Animal {
   public void play() {
     hunger += 1;
     thirst += 1;
+  }
+
+  public int getHunger(){
+    return hunger;
   }
 }

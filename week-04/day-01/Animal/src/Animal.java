@@ -20,4 +20,5 @@ public class Animal {
     hunger += 1;
     thirst += 1;
   }
+
 }
