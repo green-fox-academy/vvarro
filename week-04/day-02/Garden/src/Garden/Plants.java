@@ -1,36 +1,41 @@
 package Garden;
 
 public class Plants extends Garden {
-  public double waterAmount;
-  public boolean needsWater;
-  public String color;
+  private double waterAmount;
+  private String color;
+  private String name;
+  private int needsWater;
 
-  public void thirstyPlants() {
-    int thirsty = 0;
-    for (int i = 0; i < plants.size(); i++) {
-      if (plants.get(i)
-
-    }
+  public double getWaterAmount(){
+    return waterAmount;
   }
 
-  public void watering(int water) {
-    if (needsWater = true) {
-      waterAmount += water;
-    }
-    if (waterAmount >= 10) {
-      needsWater = false;
-    }
-  }
-
-  Plants() {
-    this.waterAmount = 0;
-    this.needsWater = true;
-    this.color = "yellow";
-  }
-
-  Plants(double waterAmount, boolean needsWater, String color){
+  public void setWaterAmount(double waterAmount){
     this.waterAmount = waterAmount;
+  }
+
+  public String getColor(){
+    return color;
+  }
+
+  public String getName(){
+    return name;
+  }
+
+  public void setName(String name){
+    this.name = name;
+  }
+
+  public double getNeedsWater(){
+    return needsWater;
+  }
+
+  public void setNeedsWater(int needsWater){
     this.needsWater = needsWater;
+  }
+
+  public Plants(String color, int needsWater) {
     this.color = color;
+    this.needsWater = needsWater;
   }
 }
