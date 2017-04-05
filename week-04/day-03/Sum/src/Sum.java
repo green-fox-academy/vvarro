@@ -1,17 +1,18 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Sum {
-  public ArrayList<Integer> numbers;
 
-  public Sum(ArrayList<Integer> numbers){
-    this.numbers = new ArrayList<Integer>(numbers);
+  public Sum(){
   }
 
-  public int sum(ArrayList<Integer> numbers){
-   int sum = 0;
+  public int sum(List<Integer> numbers){
+   int result = 0;
    for (int i : numbers) {
-     sum += numbers.get(i);
+     result += i;
    }
-   return sum;
+   if (result == 0){
+     return 0;
+   }
+   return result;
   }
 }
