@@ -6,6 +6,6 @@ public class ApplesTest {
   @Test
   public void testGetApple() throws Exception {
     Apples apple = new Apples("apple");
-    assertEquals("apple", apple.getName());
+    assertEquals("apple", apple.getApples());
   }
 }
