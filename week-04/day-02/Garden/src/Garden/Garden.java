@@ -10,20 +10,22 @@ public class Garden {
     plants.add(plant);
   }
 
-  public boolean thirstyPlant(int i) {
-    if (plants.get(i) instanceof Flower && plants.get(i).getNeedsWater() < 5) {
+  public boolean thirstyPlant(int p) {
+    if (plants.get(p).getName() =="Flower" && plants.get(p).getNeedsWater() < 5) {
       return true;
-    } else if (plants.get(i) instanceof Tree && plants.get(i).getNeedsWater() < 10) {
+    } else if (plants.get(p).getName() =="Tree" && plants.get(p).getNeedsWater() < 10) {
       return true;
     } else {
       return false;
     }
   }
 
-  public void printOut() {
+  public String printOut() {
+    String print = "";
     for (int i = 0; i < plants.size(); i++) {
-      System.out.println("The " + plants.get(i).getColor() + " " + plants.get(i).getName() + " " + (thirstyPlant(i) ? "needs" : "doesn't need") + " water.\n");
+      print = print + ("The " + plants.get(i).getColor() + " " + plants.get(i).getName() + " " + (thirstyPlant(i) ? "needs" : "doesn't need") + " water.\n");
     }
+    return print;
   }
 
   public void water(double amount) {
