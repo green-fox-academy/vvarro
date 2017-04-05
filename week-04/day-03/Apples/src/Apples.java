@@ -5,7 +5,7 @@ public class Apples {
     this.name = "apple";
   }
 
-  public String getApple() {
+  public String getName() {
     return name;
   }
 
