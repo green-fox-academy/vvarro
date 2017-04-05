@@ -28,4 +28,10 @@ public class CountLettersTest {
     assertEquals("[e=2, n=1]", letters.countLetters("ene").entrySet().toString());
   }
 
+  @Test
+  public void testCountLettersEmpty() throws Exception {
+    CountLetters letters = new CountLetters();
+    assertEquals("[]", letters.countLetters("").entrySet().toString());
+  }
+
 }
