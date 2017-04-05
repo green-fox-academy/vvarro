@@ -3,18 +3,34 @@ import java.util.List;
 
 public class Extension {
   int add(int a, int b) {
-    return 5;
+    return a + b;
   }
 
   int maxOfThree(int a, int b, int c) {
-    if (a > b)
+    if ((a > b) && (a > c)) {
       return a;
-    else
+    } else if ((b > a) && (b > c)) {
+      return b;
+    } else if ((c > a) && (c > b)) {
       return c;
+    } else if ((c == a) && (b > c)) {
+      return b;
+    } else if ((b == a) && (c > b)) {
+      return c;
+    } else if ((c == b) && (a > c)) {
+      return a;
+    } else if ((c == b) && (c == a)) {
+      return c;
+    }
   }
 
   int median(List<Integer> pool) {
-    return pool.get((pool.size()-1)/2);
+    if ((pool.size() % 2) == 0) {
+      pool.listIterator();
+      return (((pool.get((pool.size() / 2))) + (pool.get((pool.size() / 2 + 1))))/2);
+    } else {
+      return pool.get((pool.size() - 1) / 2);
+    }
   }
 
   boolean isVowel(char c) {
@@ -27,9 +43,9 @@ public class Extension {
     for (int i = 0; i < length; i++) {
       char c = teve.charAt(i);
       if (isVowel(c)) {
-        teve = String.join(c + "v" + c, teve.split(""+c));
-        i+=2;
-        length+=2;
+        teve = String.join(c + "v" + c, teve.split("" + c));
+        i += 2;
+        length += 2;
       }
     }
     return teve;
