@@ -8,8 +8,19 @@ public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
   String heroFacing;
-  int[][] mapStructure;
-
+  int [][] mapStructure = new int[][]{
+    {1, 1, 1, 0, 1, 0, 1, 1, 1, 1},
+    {1, 1, 1, 0, 1, 0, 1, 0, 0, 1},
+    {1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
+    {1, 1, 1, 1, 1, 0, 1, 1, 1, 1},
+    {0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+    {1, 0, 1, 0, 1, 1, 1, 1, 0, 1},
+    {1, 0, 1, 0, 1, 0, 0, 1, 0, 1},
+    {1, 1, 1, 1, 1, 0, 0, 1, 0, 1},
+    {1, 0, 0, 0, 1, 1, 1, 1, 0, 1},
+    {1, 1, 1, 0, 1, 0, 0, 1, 0, 1},
+    {1, 0, 1, 0, 1, 0, 1, 1, 1, 1}
+  };
 
   public Board() {
     testBoxX = 0;
@@ -22,19 +33,6 @@ public class Board extends JComponent implements KeyListener {
 
   @Override
   public void paint(Graphics graphics) {
-    mapStructure = new int[][]{
-      {1, 1, 1, 0, 1, 0, 1, 1, 1, 1},
-      {1, 1, 1, 0, 1, 0, 1, 0, 0, 1},
-      {1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
-      {1, 1, 1, 1, 1, 0, 1, 1, 1, 1},
-      {0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-      {1, 0, 1, 0, 1, 1, 1, 1, 0, 1},
-      {1, 0, 1, 0, 1, 0, 0, 1, 0, 1},
-      {1, 1, 1, 1, 1, 0, 0, 1, 0, 1},
-      {1, 0, 0, 0, 1, 1, 1, 1, 0, 1},
-      {1, 1, 1, 0, 1, 0, 0, 1, 0, 1},
-      {1, 0, 1, 0, 1, 0, 1, 1, 1, 1}
-    };
     super.paint(graphics);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
