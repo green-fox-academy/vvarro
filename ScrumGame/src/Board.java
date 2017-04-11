@@ -8,6 +8,11 @@ public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
   String heroFacing;
+
+  public int[][] getMapStructure() {
+    return mapStructure;
+  }
+
   int [][] mapStructure = new int[][]{
     {1, 1, 1, 0, 1, 0, 1, 1, 1, 1},
     {1, 1, 1, 0, 1, 0, 1, 0, 0, 1},
