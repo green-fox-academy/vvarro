@@ -8,7 +8,6 @@ public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
   String heroFacing;
-  int[][] position;
   int[][] mapStructure;
 
 
@@ -16,7 +15,6 @@ public class Board extends JComponent implements KeyListener {
     testBoxX = 0;
     testBoxY = 0;
     heroFacing = "assets/hero-down.png";
-    int[][] position = new int[11][10];
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 792));
     setVisible(true);
@@ -24,7 +22,7 @@ public class Board extends JComponent implements KeyListener {
 
   @Override
   public void paint(Graphics graphics) {
-    int[][] mapStructure = new int[][]{
+    mapStructure = new int[][]{
       {1, 1, 1, 0, 1, 0, 1, 1, 1, 1},
       {1, 1, 1, 0, 1, 0, 1, 0, 0, 1},
       {1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
@@ -85,18 +83,26 @@ public class Board extends JComponent implements KeyListener {
   // But actually we can use just this one for our goals here
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
-    if (e.getKeyCode() == KeyEvent.VK_UP && 0 < testBoxY && mapStructure[(testBoxX/72)-1][testBoxY/72] == 1) {
+    if (e.getKeyCode() == KeyEvent.VK_UP && 0 < testBoxY) {
       heroFacing = "assets/hero-up.png";
+      if (mapStructure[(testBoxX/72)-1][testBoxY/72] == 1) {
         testBoxY -= 72;
+      }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN && 720 > testBoxY) {
       heroFacing = "assets/hero-down.png";
-      testBoxY += 72;
+      if (mapStructure[(testBoxX/72)+1][testBoxY/72] == 1) {
+        testBoxY += 72;
+      }
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && 0 < testBoxX) {
       heroFacing = "assets/hero-left.png";
-      testBoxX -= 72;
+      if (mapStructure[(testBoxX/72)][(testBoxY/72)-1] == 1) {
+        testBoxX -= 72;
+      }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < 648) {
       heroFacing = "assets/hero-right.png";
-      testBoxX += 72;
+      if (mapStructure[(testBoxX/72)][(testBoxY/72)-1] == 1) {
+        testBoxX += 72;
+      }
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
