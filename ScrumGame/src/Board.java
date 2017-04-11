@@ -34,7 +34,6 @@ public class Board extends JComponent implements KeyListener {
       {1, 1, 1, 0, 1, 0, 0, 1, 0, 1},
       {1, 0, 1, 0, 1, 0, 1, 1, 1, 1}
     };
-
     super.paint(graphics);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
@@ -51,22 +50,6 @@ public class Board extends JComponent implements KeyListener {
     }
     PositionedImage hero = new PositionedImage(heroFacing, testBoxX, testBoxY);
     hero.draw(graphics);
-  }
-
-  public void faceHero(KeyEvent e, Graphics graphics) {
-    if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-      PositionedImage heroLeft = new PositionedImage("assets/hero-left.png", testBoxX, testBoxY);
-      heroLeft.draw(graphics);
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      PositionedImage heroRight = new PositionedImage("assets/hero-right.png", testBoxX, testBoxY);
-      heroRight.draw(graphics);
-    } else if (e.getKeyCode() == KeyEvent.VK_UP) {
-      PositionedImage heroUp = new PositionedImage("assets/hero-up.png", testBoxX, testBoxY);
-      heroUp.draw(graphics);
-    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      PositionedImage heroDown = new PositionedImage("assets/hero-down.png", testBoxX, testBoxY);
-      heroDown.draw(graphics);
-    }
   }
 
   public static void boardMain() {
@@ -101,16 +84,16 @@ public class Board extends JComponent implements KeyListener {
   // But actually we can use just this one for our goals here
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
-    if (e.getKeyCode() == KeyEvent.VK_UP) {
+    if (e.getKeyCode() == KeyEvent.VK_UP && 0 < testBoxY) {
       heroFacing = "assets/hero-up.png";
       testBoxY -= 72;
-    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && 720 > testBoxY) {
       heroFacing = "assets/hero-down.png";
       testBoxY += 72;
-    } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && 0 < testBoxX ) {
       heroFacing = "assets/hero-left.png";
       testBoxX -= 72;
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < 648) {
       heroFacing = "assets/hero-right.png";
       testBoxX += 72;
     }
