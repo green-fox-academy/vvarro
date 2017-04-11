@@ -103,7 +103,7 @@ public class Board extends JComponent implements KeyListener {
       if (mapStructure[testBoxY / 72][testBoxX / 72 + 1] != 0) {
         testBoxX += 72;
       }
-      repaint();
     }
+    repaint();
   }
 }
