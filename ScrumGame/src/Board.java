@@ -32,6 +32,7 @@ public class Board extends JComponent implements KeyListener {
       {1, 1, 1, 0, 1, 0, 0, 1, 0, 1},
       {1, 0, 1, 0, 1, 0, 1, 1, 1, 1}
     };
+
     super.paint(graphics);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
@@ -48,6 +49,8 @@ public class Board extends JComponent implements KeyListener {
     }
     PositionedImage hero = new PositionedImage("assets/hero-down.png", testBoxX, testBoxY);
     hero.draw(graphics);
+    PositionedImage heroLeft = new PositionedImage("assets/hero-left.png", testBoxX, testBoxY);
+    heroLeft.draw(graphics);
   }
 
 
@@ -65,6 +68,8 @@ public class Board extends JComponent implements KeyListener {
     frame.addKeyListener(board);
     // Notice (at the top) that we can only do this
     // because this Board class (the type of the board object) is also a KeyListener
+    int [][] position = new int[11][10];
+    position[0][0] = 0;
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
