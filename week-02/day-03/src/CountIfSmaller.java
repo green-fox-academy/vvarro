@@ -5,6 +5,7 @@ import java.util.Scanner;
  */
 public class CountIfSmaller {
   public static void main(String[] args) {
+
     System.out.println("Enter the first number: ");
     Scanner firstScanner = new Scanner(System.in);
     int firstNumber = firstScanner.nextInt();

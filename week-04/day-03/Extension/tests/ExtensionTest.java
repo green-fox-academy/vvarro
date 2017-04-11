@@ -77,8 +77,13 @@ public class ExtensionTest {
   }
 
   @Test
-  void testMedianFail() {
-    assertEquals(8, extension.maxOfThree(5, 4, 8));
+  void testMedianFailOdd() {
+    assertEquals(3, extension.median(Arrays.asList(8,3,5,2,1)));
+  }
+
+  @Test
+  void testMedianFailEven() {
+    assertEquals(5, extension.median(Arrays.asList(8,3,5,6)));
   }
 
   @Test

@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Extension {
@@ -19,17 +21,19 @@ public class Extension {
       return c;
     } else if ((c == b) && (a > c)) {
       return a;
-    } else if ((c == b) && (c == a)) {
+    } else {
       return c;
     }
   }
 
   int median(List<Integer> pool) {
+    Collections.sort(pool, Comparator.reverseOrder());
     if ((pool.size() % 2) == 0) {
-      pool.listIterator();
-      return (((pool.get((pool.size() / 2))) + (pool.get((pool.size() / 2 + 1))))/2);
+      double poolEven = (double) (((pool.get(pool.size() / 2).intValue()) + ((int) pool.get(pool.size() / 2 + 1).intValue())) / 2);
+      int poolIfEven = (int) poolEven;
+      return poolIfEven;
     } else {
-      return pool.get((pool.size() - 1) / 2);
+      return (pool.get((pool.size() - 1) / 2));
     }
   }
 
