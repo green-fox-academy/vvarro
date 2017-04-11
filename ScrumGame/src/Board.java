@@ -8,12 +8,15 @@ public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
   String heroFacing;
+  int[][] position;
+  int[][] mapStructure;
+
 
   public Board() {
     testBoxX = 0;
     testBoxY = 0;
     heroFacing = "assets/hero-down.png";
-
+    int[][] position = new int[11][10];
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 792));
     setVisible(true);
@@ -66,8 +69,6 @@ public class Board extends JComponent implements KeyListener {
     frame.addKeyListener(board);
     // Notice (at the top) that we can only do this
     // because this Board class (the type of the board object) is also a KeyListener
-    int[][] position = new int[11][10];
-    position[0][0] = 0;
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
@@ -84,13 +85,13 @@ public class Board extends JComponent implements KeyListener {
   // But actually we can use just this one for our goals here
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
-    if (e.getKeyCode() == KeyEvent.VK_UP && 0 < testBoxY) {
+    if (e.getKeyCode() == KeyEvent.VK_UP && 0 < testBoxY && mapStructure[(testBoxX/72)-1][testBoxY/72] == 1) {
       heroFacing = "assets/hero-up.png";
-      testBoxY -= 72;
+        testBoxY -= 72;
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN && 720 > testBoxY) {
       heroFacing = "assets/hero-down.png";
       testBoxY += 72;
-    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && 0 < testBoxX ) {
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && 0 < testBoxX) {
       heroFacing = "assets/hero-left.png";
       testBoxX -= 72;
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < 648) {
