@@ -13,19 +13,46 @@ public class Board extends JComponent implements KeyListener {
     testBoxY = 0;
 
     // set the size of your draw board
-    setPreferredSize(new Dimension(720, 720));
+    setPreferredSize(new Dimension(720, 792));
     setVisible(true);
   }
 
+  public void mapStructue() {
+    int[][] mapStructure = new int[10][10];
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        mapStructure[i][i] = 0;
+      }
+    }
+    mapStructure = new int[][]{
+      {1, 1, 1, 0, 1, 0, 1, 1, 1, 1},
+      {1, 1, 1, 0, 1, 0, 1, 0, 0, 1},
+      {1, 0, 0, 0, 1, 0, 1, 0, 0, 1},
+      {1, 1, 1, 1, 1, 0, 1, 1, 1, 1},
+      {0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+      {1, 0, 1, 0, 1, 1, 1, 1, 0, 1},
+      {1, 0, 1, 0, 1, 0, 0, 1, 0, 1},
+      {1, 1, 1, 1, 1, 0, 0, 1, 0, 1},
+      {1, 0, 0, 0, 1, 1, 1, 1, 0, 1},
+      {1, 1, 1, 0, 1, 0, 0, 1, 0, 1},
+      {1, 0, 1, 0, 1, 0, 1, 1, 1, 1}
+    };
+  }
+
   @Override
-  public void paint(Graphics graphics) {
+  public void paint(Graphics graphics, int[][] mapStructue) {
     super.paint(graphics);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 11; i++) {
       for (int j = 0; j < 10; j++) {
-        PositionedImage floor = new PositionedImage("assets/floor.png", j*72, i*72);
-        floor.draw(graphics);
+        if (mapStructue[i][j] == 1) {
+          PositionedImage floor = new PositionedImage("assets/floor.png", j * 72, i * 72);
+          floor.draw(graphics);
+        } else if (mapStructue[i][j] == 0) {
+
+        }
+
       }
     }
     PositionedImage hero = new PositionedImage("assets/hero-down.png", testBoxX, testBoxY);
