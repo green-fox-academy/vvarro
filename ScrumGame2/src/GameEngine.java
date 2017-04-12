@@ -11,7 +11,7 @@ public class GameEngine extends JComponent implements KeyListener {
 
   public GameEngine() {
     this.gameMap = new GameMap();
-    this.hero = new Hero(0,0,"assets/hero-down.png");
+    this.hero = new Hero(0, 0, "assets/hero-down.png");
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
     gameMap.createBoard();
@@ -32,8 +32,6 @@ public class GameEngine extends JComponent implements KeyListener {
   }
 
   public static void main(String[] args) {
-    // Here is how you set up a new window and adding our board
-    // to it
     JFrame frame = new JFrame("RPG Game");
     GameEngine gameEngine = new GameEngine();
     frame.add(gameEngine);
