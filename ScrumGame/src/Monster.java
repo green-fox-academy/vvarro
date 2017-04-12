@@ -1,4 +1,4 @@
-public class Monster {
+public class Monster extends Creatures {
   public Monster() {
   }
 }

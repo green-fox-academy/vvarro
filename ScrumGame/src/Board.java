@@ -9,10 +9,6 @@ public class Board extends JComponent implements KeyListener {
   int testBoxY;
   String heroFacing;
 
-  public int[][] getMapStructure() {
-    return mapStructure;
-  }
-
   int [][] mapStructure = new int[][]{
     {1, 1, 1, 0, 1, 0, 1, 1, 1, 1},
     {1, 1, 1, 0, 1, 0, 1, 0, 0, 1},
@@ -26,6 +22,9 @@ public class Board extends JComponent implements KeyListener {
     {1, 1, 1, 0, 1, 0, 0, 1, 0, 1},
     {1, 0, 1, 0, 1, 0, 1, 1, 1, 1}
   };
+  public int[][] getMapStructure() {
+    return mapStructure;
+  }
 
   public Board() {
     testBoxX = 0;
@@ -54,6 +53,8 @@ public class Board extends JComponent implements KeyListener {
     }
     PositionedImage hero = new PositionedImage(heroFacing, testBoxX, testBoxY);
     hero.draw(graphics);
+    Coordinates coordinates = new Coordinates();
+    PositionedImage skeleton = new PositionedImage("assets/skeleton.png",coordinates.getCoordinates(), coordinates.getCoordinates())
   }
 
   public static void boardMain() {

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class Coordinates {
   public Coordinates() {
@@ -19,5 +20,15 @@ public class Coordinates {
       }
     }
     return coordinates;
+  }
+
+  public List<Integer> getCoordinates(List<List<Integer>> coordinates) {
+    Random generator = new Random();
+    List<Integer> goodCoordinates = new ArrayList<>();
+    int randomIndex1 = generator.nextInt(collectCoordinates().size());
+    int randomIndex2 = generator.nextInt(collectCoordinates().size());
+    goodCoordinates.get(0);
+    goodCoordinates.add(randomIndex2);
+    return goodCoordinates;
   }
 }
