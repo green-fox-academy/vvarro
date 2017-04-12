@@ -3,24 +3,27 @@ public class Character extends GameObject {
     super(posX, posY, costume);
   }
 
-  private void moveUp(){
+  private void moveUp() {
     if (GameMap.mapStructure[getPosY() / 72 - 1][getPosX() / 72] != 0) {
-      getPosY() -= 72;
-      move;
+      move(0, -72);
     }
-
-
   }
 
-  private void moveDown(){
-
+  private void moveDown() {
+    if (GameMap.mapStructure[getPosY() / 72 + 1][getPosX() / 72] != 0) {
+      move(0, +72);
+    }
   }
 
-  private void moveLeft(){
-
+  private void moveLeft() {
+    if (GameMap.mapStructure[getPosY() / 72][getPosX() / 72 - 1] != 0) {
+      move(-72, 0);
+    }
   }
 
-  private void moveRight(){
-
+  private void moveRight() {
+    if (GameMap.mapStructure[getPosY() / 72][getPosX() / 72 + 1] != 0) {
+      move(+72, 0);
+    }
   }
 }

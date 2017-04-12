@@ -4,4 +4,8 @@ boolean isWall;
     super(posX, posY, costume);
     this.isWall = isWall;
   }
+
+  public Tiles() {
+    super();
+  }
 }

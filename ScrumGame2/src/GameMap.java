@@ -36,9 +36,9 @@ public class GameMap {
       gameObjects.add(temp);
       for (int j = 0; j < 10; j++) {
         if (mapStructure[i][j] == 1) {
-          temp.add(new Floor(j * 72, i * 72, "assets/floor.png"));
+          temp.add(new Floor(j * 72, i * 72, "assets/floor.png", false));
         } else if (mapStructure[i][j] == 0) {
-          temp.add(new Wall(j * 72, i * 72, "assets/wall.png"));
+          temp.add(new Wall(j * 72, i * 72, "assets/wall.png", true));
         }
       }
     }
