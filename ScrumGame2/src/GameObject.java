@@ -1,4 +1,5 @@
 public class GameObject {
+
   private int posX;
   private int posY;
   private String costume;
@@ -9,8 +10,20 @@ public class GameObject {
     this.costume = costume;
   }
 
-  public void move() {
-    this.posX = get.characterposX;
-    this.posY = get.characterposY;
+  //public void move() {
+    //this.posX = get.characterposX;
+    //this.posY = get.characterposY;
+  //}
+
+  public int getPosX() {
+    return posX;
+  }
+
+  public int getPosY() {
+    return posY;
+  }
+
+  public String getCostume() {
+    return costume;
   }
 }

@@ -1,4 +1,6 @@
 public class Hero extends Character {
-  public Hero() {
+
+  public Hero(int posX, int posY, String costume) {
+    super(posX, posY, costume);
   }
 }

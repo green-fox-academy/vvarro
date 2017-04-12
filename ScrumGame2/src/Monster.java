@@ -1,4 +1,6 @@
 public class Monster extends Character {
-  public Monster() {
+
+  public Monster(int posX, int posY, String costume) {
+    super(posX, posY, costume);
   }
 }

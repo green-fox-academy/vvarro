@@ -1,7 +1,7 @@
 public class Floor extends Tiles {
-  boolean isClear;
 
-  public Floor(boolean isClear) {
-    this.isClear = true;
+  public Floor(int posX, int posY, String costume) {
+    super(posX, posY, costume);
   }
+
 }
