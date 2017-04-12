@@ -1,23 +1,28 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.List;
 
-public class GameEngine extends JComponent {
+public class GameEngine extends JComponent implements KeyListener {
   private GameMap gameMap;
   private Hero hero;
 
   public GameEngine() {
     this.gameMap = new GameMap();
+    this.hero = new Hero(0,0,"assets/hero-down.png");
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
-    this.hero = new Hero(0, 0, "assets/hero-down.png");
+    gameMap.createBoard();
+    List<GameObject> heroList = new ArrayList<>();
+    heroList.add(hero);
+    gameMap.getGameObjects().add(heroList);
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    gameMap.createBoard();
     for (List<GameObject> list : gameMap.getGameObjects()) {
       for (GameObject i : list) {
         PositionedImage image = new PositionedImage(i.getCostume(), i.getPosX(), i.getPosY());
@@ -31,26 +36,33 @@ public class GameEngine extends JComponent {
     // to it
     JFrame frame = new JFrame("RPG Game");
     GameEngine gameEngine = new GameEngine();
-    GameObject hero = new GameObject();
     frame.add(gameEngine);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
     frame.pack();
+    frame.addKeyListener(gameEngine);
   }
+
+  @Override
+  public void keyTyped(KeyEvent e) {
+
+  }
+
+  @Override
+  public void keyPressed(KeyEvent e) {
+
+  }
+
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-
       hero.moveUp();
-      }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       hero.moveDown();
-      }
-    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && 0 < testBoxX) {
-      hero.
-      }
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && testBoxX < 648) {
-      heroFacing = "assets/hero-right.png";
-      if (mapStructure[testBoxY / 72][testBoxX / 72 + 1] != 0) {
-        testBoxX += 72;
-      }
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      hero.moveLeft();
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      hero.moveRight();
+    }
+    repaint();
+  }
 }

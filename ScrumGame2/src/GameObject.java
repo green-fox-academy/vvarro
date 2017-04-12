@@ -1,16 +1,12 @@
 public class GameObject {
 
-  public void setPosX(int posX) {
-    this.posX = posX;
-  }
-
-  public void setPosY(int posY) {
-    this.posY = posY;
-  }
-
   private int posX;
   private int posY;
   private String costume;
+
+  public void setCostume(String costume) {
+    this.costume = costume;
+  }
 
   public GameObject(int posX, int posY, String costume) {
     this.posX = posX;
@@ -19,7 +15,6 @@ public class GameObject {
   }
 
   public GameObject() {
-
   }
 
   public void move(int x, int y) {
