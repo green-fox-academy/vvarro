@@ -3,13 +3,13 @@ import java.util.List;
 
 public class GameMap {
   public static int[][] mapStructure;
-  public List<List<GameObject>> gameObjects;
+  private static List<List<GameObject>> gameObjects;
 
   public int[][] getMapStructure() {
     return mapStructure;
   }
 
-  public List<List<GameObject>> getGameObjects() {
+  public static List<List<GameObject>> getGameObjects() {
     return gameObjects;
   }
 

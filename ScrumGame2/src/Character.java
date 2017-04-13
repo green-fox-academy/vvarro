@@ -1,9 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Character extends GameObject {
-  public Character(int posX, int posY, String costume) {
-    super(posX, posY, costume);
+  private static List<GameObject> characterList;
+  private GameMap map;
+
+  public static List<GameObject> getCharacterList() {
+    return characterList;
   }
 
-  public Character() {
+  public Character(int posX, int posY, String costume, GameMap map) {
+    super(posX, posY, costume);
+    characterList = new ArrayList<>();
+    this.map = map;
   }
 
   public void moveUp() {

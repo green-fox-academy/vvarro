@@ -8,6 +8,7 @@ import java.util.List;
 public class GameEngine extends JComponent implements KeyListener {
   private GameMap gameMap;
   private Hero hero;
+  private List<GameObject> characterList;
 
   public GameEngine() {
     this.gameMap = new GameMap();
