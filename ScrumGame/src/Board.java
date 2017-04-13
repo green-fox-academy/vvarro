@@ -53,8 +53,6 @@ public class Board extends JComponent implements KeyListener {
     }
     PositionedImage hero = new PositionedImage(heroFacing, testBoxX, testBoxY);
     hero.draw(graphics);
-    Coordinates coordinates = new Coordinates();
-    PositionedImage skeleton = new PositionedImage("assets/skeleton.png",coordinates.getCoordinates(), coordinates.getCoordinates())
   }
 
   public static void boardMain() {

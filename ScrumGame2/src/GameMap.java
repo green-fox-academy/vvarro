@@ -48,16 +48,21 @@ public class GameMap {
     }
   }
 
-  public boolean isFloor(int posX, int posY) {
+  public boolean isWall(int posX, int posY) {
     for (GameObject g : gameObjects) {
       if (g.getPosX() == posX && g.getPosY() == posY) {
         GameObject floor = new Floor();
         g.getClass().equals(floor.getClass());
-        return true;
+        return false;
       }
     }
-    return false;
+    return true;
   }
+
+  public boolean anotherisWall(int x, int y) {
+    return mapStructure[x/72][y/72] == 1;
+  }
+
 
   public boolean isCharacter(int posX, int posY) {
     for (GameObject g : characterList) {
@@ -72,7 +77,7 @@ public class GameMap {
     int[] randCoordinate = new int[2];
     int x = (int) (Math.random() * 10) * 72;
     int y = (int) (Math.random() * 10) * 72;
-    while ((isCharacter(x, y) == true) && (isFloor(x, y) == false)) {
+    while (anotherisWall(x,y) || isCharacter(x,y)) {
       x = (int) (Math.random() * 10) * 72;
       y = (int) (Math.random() * 10) * 72;
     }
