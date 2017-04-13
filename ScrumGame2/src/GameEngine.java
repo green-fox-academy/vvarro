@@ -2,35 +2,33 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
-import java.util.List;
 
 public class GameEngine extends JComponent implements KeyListener {
   private GameMap gameMap;
   private Hero hero;
-  private List<GameObject> characterList;
+  private Skeleton skeleton1;
 
   public GameEngine() {
     this.gameMap = new GameMap();
-    this.hero = new Hero(0, 0, "assets/hero-down.png");
+    this.hero = new Hero(0, 0, "assets/hero-down.png", gameMap);
+    this.skeleton1 = new Skeleton(72, 72, "assets/skeleton.png", gameMap);
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
     gameMap.createBoard();
-    List<GameObject> heroList = new ArrayList<>();
-    heroList.add(hero);
-    gameMap.getGameObjects().add(heroList);
+    gameMap.getGameObjects().add(hero);
+    gameMap.getCharacterList().add(hero);
+    gameMap.getGameObjects().add(skeleton1);
+    gameMap.getCharacterList().add(skeleton1);
   }
 
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    for (List<GameObject> list : gameMap.getGameObjects()) {
-      for (GameObject i : list) {
-        PositionedImage image = new PositionedImage(i.getCostume(), i.getPosX(), i.getPosY());
+    for (GameObject list : gameMap.getGameObjects()) {
+        PositionedImage image = new PositionedImage(list.getCostume(), list.getPosX(), list.getPosY());
         image.draw(graphics);
       }
     }
-  }
 
   public static void main(String[] args) {
     JFrame frame = new JFrame("RPG Game");

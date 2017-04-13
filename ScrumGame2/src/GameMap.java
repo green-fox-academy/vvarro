@@ -3,13 +3,18 @@ import java.util.List;
 
 public class GameMap {
   public static int[][] mapStructure;
-  private static List<List<GameObject>> gameObjects;
+  private static List<GameObject> gameObjects;
+  private static List<GameObject> characterList;
 
   public int[][] getMapStructure() {
     return mapStructure;
   }
 
-  public static List<List<GameObject>> getGameObjects() {
+  public static List<GameObject> getCharacterList() {
+    return characterList;
+  }
+
+  public static List<GameObject> getGameObjects() {
     return gameObjects;
   }
 
@@ -27,20 +32,39 @@ public class GameMap {
       {1, 1, 1, 1, 1, 0, 0, 1, 0, 1},
     };
 
-    this.gameObjects = new ArrayList<>(new ArrayList<>());
+    this.gameObjects = new ArrayList<>();
+    this.characterList = new ArrayList<>();
   }
 
   public void createBoard() {
     for (int i = 0; i < 10; i++) {
-      List<GameObject> temp = new ArrayList<>();
-      gameObjects.add(temp);
       for (int j = 0; j < 10; j++) {
         if (mapStructure[i][j] == 1) {
-          temp.add(new Floor(j * 72, i * 72, "assets/floor.png"));
+          gameObjects.add(new Floor(j * 72, i * 72, "assets/floor.png"));
         } else if (mapStructure[i][j] == 0) {
-          temp.add(new Wall(j * 72, i * 72, "assets/wall.png"));
+          gameObjects.add(new Wall(j * 72, i * 72, "assets/wall.png"));
         }
       }
     }
+  }
+
+  public boolean isFloor(int posX, int posY) {
+    for (GameObject g : gameObjects) {
+      if (g.getPosX() == posX && g.getPosY() == posY) {
+        GameObject floor = new Floor();
+        g.getClass().equals(floor.getClass());
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean isCharacter(int posX, int posY) {
+    for (GameObject g : characterList) {
+      if (g.getPosX() == posX && g.getPosY() == posY) {
+        return true;
+      }
+    }
+    return false;
   }
 }
