@@ -67,4 +67,18 @@ public class GameMap {
     }
     return false;
   }
+
+  public int[] randCoordinate() {
+    int[] randCoordinate = new int[2];
+    int x = (int) (Math.random() * 10) * 72;
+    int y = (int) (Math.random() * 10) * 72;
+    while ((isCharacter(x, y) == true) && (isFloor(x, y) == false)) {
+      x = (int) (Math.random() * 10) * 72;
+      y = (int) (Math.random() * 10) * 72;
+    }
+      randCoordinate[0] = x;
+      randCoordinate[1] = y;
+    return randCoordinate;
+  }
 }
+

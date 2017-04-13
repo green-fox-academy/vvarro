@@ -7,11 +7,15 @@ public class GameEngine extends JComponent implements KeyListener {
   private GameMap gameMap;
   private Hero hero;
   private Skeleton skeleton1;
+  private Skeleton skeleton2;
+  private Skeleton skeleton3;
 
   public GameEngine() {
     this.gameMap = new GameMap();
     this.hero = new Hero(0, 0, "assets/hero-down.png", gameMap);
-    this.skeleton1 = new Skeleton(72, 72, "assets/skeleton.png", gameMap);
+    this.skeleton1 = new Skeleton(gameMap.randCoordinate()[0], gameMap.randCoordinate()[1], "assets/skeleton.png", gameMap);
+    this.skeleton2 = new Skeleton(gameMap.randCoordinate()[0], gameMap.randCoordinate()[1], "assets/skeleton.png", gameMap);
+    this.skeleton3 = new Skeleton(gameMap.randCoordinate()[0], gameMap.randCoordinate()[1], "assets/skeleton.png", gameMap);
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
     gameMap.createBoard();
@@ -19,6 +23,10 @@ public class GameEngine extends JComponent implements KeyListener {
     gameMap.getCharacterList().add(hero);
     gameMap.getGameObjects().add(skeleton1);
     gameMap.getCharacterList().add(skeleton1);
+    gameMap.getGameObjects().add(skeleton2);
+    gameMap.getCharacterList().add(skeleton2);
+    gameMap.getGameObjects().add(skeleton3);
+    gameMap.getCharacterList().add(skeleton3);
   }
 
   @Override
