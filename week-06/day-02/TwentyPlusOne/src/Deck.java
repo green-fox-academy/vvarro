@@ -6,10 +6,12 @@ public class Deck {
   private static final List<Card> Deck = new ArrayList<Card>();
 
   public Deck() {
-    for (Card.Color color : Card.Color.values()) {
-      for (Card.Suit suit : Card.Suit.values()) {
-        for (Card.Rank rank : Card.Rank.values()) {
-          Deck.add(new Card(rank, suit, color));
+    for (Card.Suit suit : Card.Suit.values()) {
+      for (Card.Rank rank : Card.Rank.values()) {
+        if ((suit.equals(Card.Suit.DIAMONDS)) | (suit.equals(Card.Suit.HEARTS))) {
+          Deck.add(new Card(rank, suit, Card.Color.RED));
+        } else if ((suit.equals(Card.Suit.CLUBS)) | (suit.equals(Card.Suit.SPADES))) {
+          Deck.add(new Card(rank, suit, Card.Color.BLACK));
         }
       }
     }

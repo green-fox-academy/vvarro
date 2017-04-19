@@ -12,7 +12,7 @@ public class Card {
   }
 
   public enum Suit {
-    CLUBS(Color.BLACK), DIAMONDS(Color.RED), HEARTS(Color.RED), SPADES(Color.BLACK);
+    CLUBS(Color.BLACK), DIAMONDS(Color.RED), SPADES(Color.BLACK), HEARTS(Color.RED),;
 
     private Color color;
 
@@ -22,7 +22,7 @@ public class Card {
   }
 
   public enum Color {
-    BLACK, RED
+    BLACK, RED,
   }
 
   private final Rank rank;
@@ -45,6 +45,10 @@ public class Card {
 
   public Color color() {
     return this.color;
+  }
+
+  public String toString() {
+    return suit + " " + rank;
   }
 
 }
