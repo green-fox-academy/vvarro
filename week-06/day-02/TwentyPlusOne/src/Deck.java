@@ -42,9 +42,9 @@ public class Deck {
     return removed;
   }
 
-  public Card pullRandom() {
+  public Card.Rank[] pullRandom() {
     Card removed = Deck.remove((int)Math.random()*10);
-    return removed;
+    return Card.Rank.values();
   }
 
 }

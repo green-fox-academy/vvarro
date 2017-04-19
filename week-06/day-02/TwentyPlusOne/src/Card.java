@@ -9,6 +9,10 @@ public class Card {
     Rank(int point) {
       this.Rankpoint = point;
     }
+
+    public int getRankpoint() {
+      return Rankpoint;
+    }
   }
 
   public enum Suit {
