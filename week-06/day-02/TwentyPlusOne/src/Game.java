@@ -1,4 +1,5 @@
 public class Game {
+
   public static void main(String[] args) {
     Game game = new Game();
     game.play();
@@ -10,7 +11,7 @@ public class Game {
     int randNumber = 15 + (int) (Math.random() * 21);
     int counter = 0;
     while ((counter <= 21) || counter >) {
-      counter = counter + (int)deck.pullRandom();
+      counter = counter + (int) deck.pullRandom();
     }
   }
 }

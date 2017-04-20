@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck {
+
   private static final List<Card> Deck = new ArrayList<Card>();
 
   public Deck() {
@@ -21,7 +22,7 @@ public class Deck {
     return new ArrayList<Card>(Deck);
   }
 
-  public String toString(){
+  public String toString() {
     return Deck.toString();
   }
 
@@ -38,12 +39,12 @@ public class Deck {
   }
 
   public Card pullLast() {
-    Card removed = Deck.remove(Deck.size()-1);
+    Card removed = Deck.remove(Deck.size() - 1);
     return removed;
   }
 
   public Card.Rank[] pullRandom() {
-    Card removed = Deck.remove((int)Math.random()*10);
+    Card removed = Deck.remove((int) Math.random() * 10);
     return Card.Rank.values();
   }
 
