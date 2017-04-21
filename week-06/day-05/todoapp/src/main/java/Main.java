@@ -1,31 +1,29 @@
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
+import todoapp.TodoApp;
 
 public class Main {
 
   public static void main(String[] args) {
+    TodoApp todoApp = new TodoApp();
+
     OptionParser parser = new OptionParser();
-    parser.accepts("l").withRequiredArg();
-    parser.accepts("a").withRequiredArg();
-    parser.accepts("r").withRequiredArg();
-    parser.accepts("c").withRequiredArg();
-    OptionSet commands = parser.parse(args);
-
-    if (commands.has("a")) {
-      System.out.println("`-a` was given with the argument " + commands.valueOf("a"));
+    parser.accepts("l");
+    parser.accepts("a").withRequiredArg().ofType(String.class);
+    parser.accepts("r").withRequiredArg().ofType(String.class);
+    parser.accepts("c").withRequiredArg().ofType(String.class);
+    OptionSet options = parser.parse(args);
+    if (options.has("a")) {
+      System.out.println("Task added: " + options.valueOf("a"));
     }
-
-    if (commands.has("l")) {
-      System.out.println("`-l` was given with the no additional information.");
+    if (options.has("l")) {
+      System.out.println("List all the tasks");
     }
-
-    if (commands.has("r")) {
-      System.out.println("`-r` was given with the no additional information.");
+    if (options.has("r")) {
+      System.out.println("Task removed:  " + options.valueOf("r"));
     }
-
-    if (commands.has("c")) {
-      System.out.println("`-l` was given with the no additional information.");
+    if (options.has("c")) {
+      System.out.println("Task checked:  " + options.valueOf("c"));
     }
   }
-
 }

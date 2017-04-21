@@ -1,10 +1,12 @@
 package todoapp;
 
 public class Task {
+  private int id;
   private String status;
   private String task;
 
-  Task(String status, String task) {
+  Task(int id, String status, String task) {
+    this.id = id;
     this.status = status;
     this.task = task;
   }

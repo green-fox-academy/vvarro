@@ -14,6 +14,8 @@ public abstract class Command {
     return arg;
   }
 
+  public abstract void execute();
+
   public String getDescription() {
     return " -" + arg + "   " + description;
   }
