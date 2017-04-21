@@ -10,8 +10,6 @@ public abstract class Command {
     this.description = description;
   }
 
-  public abstract String execute();
-
   public String getArg() {
     return arg;
   }
