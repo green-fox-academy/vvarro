@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HelloWebController {
-  @RequestMapping("/web/greeting")
+  @RequestMapping("/web")
   public String greeting(Model model) {
     model.addAttribute("name", " World");
     return "greeting";
