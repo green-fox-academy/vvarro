@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloWebGreetCounterController {
+
   AtomicLong counter = new AtomicLong();
-    @RequestMapping("/web/greeting")
-    public String greeting(Model model, @RequestParam String name) {
-      Greeting greeting = new Greeting(counter.incrementAndGet(), "Hello, " + name + "! This site was loaded " + counter + " times since last server start.");
-      model.addAttribute("greeting", greeting.getContent());
-      return "greetingv2";
-    }
+
+  @RequestMapping("/web/greeting")
+  public String greeting(Model model, @RequestParam String name) {
+    Greeting greeting = new Greeting(counter.incrementAndGet(),
+        "Hello, " + name + "! This site was loaded " + counter + " times since last server start.");
+    model.addAttribute("greeting", greeting.getContent());
+    return "greetingv2";
   }
+}
