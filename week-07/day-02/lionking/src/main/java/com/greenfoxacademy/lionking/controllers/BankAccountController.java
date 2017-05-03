@@ -1,6 +1,8 @@
 package com.greenfoxacademy.lionking.controllers;
 
 import com.greenfoxacademy.lionking.model.BankAccount;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,5 +34,24 @@ public class BankAccountController {
     model.addAttribute("balance", bankAccount.getBalance());
     model.addAttribute("type", bankAccount.getAnimalType());
     return "bankaccount3";
+  }
+
+  @RequestMapping("/excersise4")
+  public String submitText(Model model) {
+    model.addAttribute("text", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
+    return "bankaccount4";
+  }
+
+  @RequestMapping("/excersise5")
+  public String arrayList(Model model) {
+    List<BankAccount> characters = new ArrayList<>();
+    characters.add(new BankAccount("Nala", 3000, "lion" ));
+    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
+    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
+    model.addAttribute("name", characters.get(1).getName());
+    model.addAttribute("balance", characters.get(1).getBalance());
+    model.addAttribute("type", characters.get(1).getAnimalType());
+    return "bankaccount5";
   }
 }
