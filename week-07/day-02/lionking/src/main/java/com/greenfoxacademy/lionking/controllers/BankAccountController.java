@@ -54,4 +54,40 @@ public class BankAccountController {
     model.addAttribute("type", characters.get(1).getAnimalType());
     return "bankaccount5";
   }
+
+  @RequestMapping("/excersise6")
+  public String id1(Model model) {
+    List<BankAccount> characters = new ArrayList<>();
+    characters.add(new BankAccount("Nala", 3000, "lion" ));
+    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
+    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
+    model.addAttribute("name", characters.get(1).getName());
+    model.addAttribute("balance", characters.get(1).getBalance());
+    model.addAttribute("type", characters.get(1).getAnimalType());
+    model.addAttribute("index", characters.indexOf(characters.get(1)));
+    return "bankaccount6";
+  }
+
+  @RequestMapping("/excersise62")
+  public String id2(Model model) {
+    List<BankAccount> characters = new ArrayList<>();
+    characters.add(new BankAccount("Nala", 3000, "lion" ));
+    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
+    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
+    model.addAttribute("characters",characters);
+    return "bankaccount62";
+  }
+
+  @RequestMapping("/excersise7")
+  public String isKing(Model model) {
+    List<BankAccount> characters = new ArrayList<>();
+    characters.add(new BankAccount("Nala", 3000, "lion" ));
+    characters.add(new BankAccount("King", 8000, "lion" ));
+    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
+    model.addAttribute("characters",characters);
+    return "bankaccount62";
+  }
 }

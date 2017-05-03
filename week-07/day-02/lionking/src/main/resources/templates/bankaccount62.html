@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Thymeleaf Exercise #</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:each="character: ${characters}" th:text="'Index: ' + ${characterStat.index} +', Name: ' + ${character.name} + ', Balance: ' + ${character.balance}  + ', Animal type: ' + ${character.animalType}"/>
+</body>
+</html>
