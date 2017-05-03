@@ -7,7 +7,9 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class BankAccount {
- String name;
- int balance;
- String animalType;
+
+  String name;
+  int balance;
+  String animalType;
+
 }

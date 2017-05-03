@@ -6,6 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:each="character: ${characters}" th:text="'Index: ' + ${characterStat.index} +', Name: ' + ${character.name} + ', Balance: ' + ${character.balance}  + ', Animal type: ' + ${character.animalType}"/>
+<p th:each="character : ${characters}" th:class="${character.name == 'Mufasa'} ? 'King' : ''  "
+   th:text="'Index: ' + ${characterStat.index} +', Name: '   + ${character.name} + ', Balance: ' + ${character.balance}  + ', Animal type: ' + ${character.animalType}"></p>
 </body>
 </html>
