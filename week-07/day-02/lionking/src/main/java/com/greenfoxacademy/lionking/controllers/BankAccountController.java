@@ -101,4 +101,15 @@ public class BankAccountController {
     model.addAttribute("characters",characters);
     return "bankaccount8";
   }
+
+  @RequestMapping("/excersise9")
+  public String isBadGuySwitch(Model model) {
+    List<BankAccount> characters = new ArrayList<>();
+    characters.add(new BankAccount("Nala", 3000, "lion" ));
+    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
+    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
+    model.addAttribute("characters",characters);
+    return "bankaccount9";
+  }
 }
