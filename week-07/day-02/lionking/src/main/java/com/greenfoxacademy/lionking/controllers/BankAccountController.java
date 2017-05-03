@@ -45,10 +45,10 @@ public class BankAccountController {
   @RequestMapping("/excersise5")
   public String arrayList(Model model) {
     List<BankAccount> characters = new ArrayList<>();
-    characters.add(new BankAccount("Nala", 3000, "lion" ));
-    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
-    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
-    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
+    characters.add(new BankAccount("Nala", 3000, "lion"));
+    characters.add(new BankAccount("Mufasa", 8000, "lion"));
+    characters.add(new BankAccount("Timon", 2000, "meerkat"));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog"));
     model.addAttribute("name", characters.get(1).getName());
     model.addAttribute("balance", characters.get(1).getBalance());
     model.addAttribute("type", characters.get(1).getAnimalType());
@@ -58,10 +58,10 @@ public class BankAccountController {
   @RequestMapping("/excersise6")
   public String id1(Model model) {
     List<BankAccount> characters = new ArrayList<>();
-    characters.add(new BankAccount("Nala", 3000, "lion" ));
-    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
-    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
-    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
+    characters.add(new BankAccount("Nala", 3000, "lion"));
+    characters.add(new BankAccount("Mufasa", 8000, "lion"));
+    characters.add(new BankAccount("Timon", 2000, "meerkat"));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog"));
     model.addAttribute("name", characters.get(1).getName());
     model.addAttribute("balance", characters.get(1).getBalance());
     model.addAttribute("type", characters.get(1).getAnimalType());
@@ -72,44 +72,44 @@ public class BankAccountController {
   @RequestMapping("/excersise62")
   public String id2(Model model) {
     List<BankAccount> characters = new ArrayList<>();
-    characters.add(new BankAccount("Nala", 3000, "lion" ));
-    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
-    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
-    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
-    model.addAttribute("characters",characters);
+    characters.add(new BankAccount("Nala", 3000, "lion"));
+    characters.add(new BankAccount("Mufasa", 8000, "lion"));
+    characters.add(new BankAccount("Timon", 2000, "meerkat"));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog"));
+    model.addAttribute("characters", characters);
     return "bankaccount62";
   }
 
   @RequestMapping("/excersise7")
   public String isKing(Model model) {
     List<BankAccount> characters = new ArrayList<>();
-    characters.add(new BankAccount("Nala", 3000, "lion" ));
-    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
-    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
-    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
-    model.addAttribute("characters",characters);
+    characters.add(new BankAccount("Nala", 3000, "lion"));
+    characters.add(new BankAccount("Mufasa", 8000, "lion"));
+    characters.add(new BankAccount("Timon", 2000, "meerkat"));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog"));
+    model.addAttribute("characters", characters);
     return "bankaccount7";
   }
 
   @RequestMapping("/excersise8")
   public String isBadGuy(Model model) {
     List<BankAccount> characters = new ArrayList<>();
-    characters.add(new BankAccount("Nala", 3000, "lion" ));
-    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
-    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
-    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
-    model.addAttribute("characters",characters);
+    characters.add(new BankAccount("Nala", 3000, "lion"));
+    characters.add(new BankAccount("Mufasa", 8000, "lion"));
+    characters.add(new BankAccount("Timon", 2000, "meerkat"));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog"));
+    model.addAttribute("characters", characters);
     return "bankaccount8";
   }
 
   @RequestMapping("/excersise9")
   public String isBadGuySwitch(Model model) {
     List<BankAccount> characters = new ArrayList<>();
-    characters.add(new BankAccount("Nala", 3000, "lion" ));
-    characters.add(new BankAccount("Mufasa", 8000, "lion" ));
-    characters.add(new BankAccount("Timon", 2000, "meerkat" ));
-    characters.add(new BankAccount("Pumbaa", 1000, "warthog" ));
-    model.addAttribute("characters",characters);
+    characters.add(new BankAccount("Nala", 3000, "lion"));
+    characters.add(new BankAccount("Mufasa", 8000, "lion"));
+    characters.add(new BankAccount("Timon", 2000, "meerkat"));
+    characters.add(new BankAccount("Pumbaa", 1000, "warthog"));
+    model.addAttribute("characters", characters);
     return "bankaccount9";
   }
 }
