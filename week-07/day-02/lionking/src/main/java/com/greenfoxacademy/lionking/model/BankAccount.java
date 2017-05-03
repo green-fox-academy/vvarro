@@ -1,5 +1,13 @@
 package com.greenfoxacademy.lionking.model;
 
-public class BankAccount {
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class BankAccount {
+ String name;
+ String balance;
+ String animalType;
 }
