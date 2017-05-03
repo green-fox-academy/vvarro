@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Thymeleaf Exercise #</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:each="character : ${characters}"
+     th:switch="${character.name}">
+  <p th:case="'Timon'"
+     th:text="'Bad Guy' + ' Index: ' + ${characterStat.index} +', Name: '   + ${character.name} + ', Balance: ' + ${character.balance}  + ', Animal type: ' + ${character.animalType}"></p>
+  <p th:case="*" th:text="'Good Guy' + ' Index: ' + ${characterStat.index} +', Name: ' + ${character.name} + ', Balance:
+' + ${character.balance} + ', Animal type: ' + ${character.animalType}"></p>
+</div>
+</body>
+</html>
