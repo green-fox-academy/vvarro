@@ -25,4 +25,12 @@ public class BankAccountController {
     model.addAttribute("type", bankAccount.getAnimalType());
     return "bankaccount2";
   }
+
+  @RequestMapping("/excersise3")
+  public String zebra(Model model) {
+    model.addAttribute("name", bankAccount.getName());
+    model.addAttribute("balance", bankAccount.getBalance());
+    model.addAttribute("type", bankAccount.getAnimalType());
+    return "bankaccount3";
+  }
 }
