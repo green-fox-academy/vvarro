@@ -8,6 +8,6 @@ import lombok.Getter;
 @AllArgsConstructor
 public class BankAccount {
  String name;
- String balance;
+ int balance;
  String animalType;
 }
