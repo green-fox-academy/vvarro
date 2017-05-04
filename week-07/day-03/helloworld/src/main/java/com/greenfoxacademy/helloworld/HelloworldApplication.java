@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloworldApplication implements CommandLineRunner {
 
   @Autowired
-  HelloWorld helloWorld;
+  MyColor redColor;
 
   public static void main(String[] args) {
     SpringApplication.run(HelloworldApplication.class, args);
@@ -17,7 +17,6 @@ public class HelloworldApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    helloWorld.setMessage("Hello World!");
-    helloWorld.getMessage();
+    redColor.printColor();
   }
 }

@@ -4,10 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class HelloWorldConfig {
+public class ColorConfig {
 
   @Bean
-  public HelloWorld helloWorld() {
-    return new HelloWorld();
+  public RedColor redColor() {
+    return new RedColor();
   }
 }
