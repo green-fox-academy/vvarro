@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Thymeleaf Exercise #</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h1>Form</h1>
+<form action="#" th:action="@{/form}" th:object="${form}" method="post">
+  <p>Bad or Good: <input type="text" th:field="*{id}" /></p>
+  <p>Message: <input type="text" th:field="*{content}" /></p>
+  <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+
+<div th:each="character : ${characters}"
+     th:switch="${character.name}">
+  <p th:case="'Timon'"
+     th:text="'Bad Guy' + ', Index: ' + ${characterStat.index} +', Name: '   + ${character.name} + ', Balance: ' + ${character.balance} + ' Zebra'  + ', Animal type: ' + ${character.animalType}"></p>
+  <p th:case="*" th:text="'Good Guy' + ', Index: ' + ${characterStat.index} +', Name: ' + ${character.name} + ', Balance:
+' + ${character.balance} + ' Zebra' + ', Animal type: ' + ${character.animalType}"></p>
+</div>
+</body>
+</html>
