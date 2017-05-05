@@ -14,7 +14,7 @@
   </a>
 </ul>
 <img src="juniper.png"  width="20%" height="20%" alt=""/>
-<p th:text="'This is ' + ${fox.name} + '. Currently living on '   + ${fox.getFoodName()} + ' and ' + ${fox.getDrinkName()} + '. He knows ' + ${fox.getTricksSize()} + ' tricks.'"></p>
+<p th:text="'This is ' + ${fox.name} + '. Currently living on '   + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTricksSize()} + ' tricks.'"></p>
 <h1>Known Tricks</h1>
 <span th:if="${fox.getTricksSize() == 0}">You know no tricks, yet. Go and learn some.</span>
 <span th:if="${fox.getTricksSize() > 0}">

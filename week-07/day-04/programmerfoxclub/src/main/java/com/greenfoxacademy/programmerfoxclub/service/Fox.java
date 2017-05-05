@@ -2,29 +2,26 @@ package com.greenfoxacademy.programmerfoxclub.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class Fox {
+  public String name;
+  public List<Trick> tricks;
+  public String food;
+  public String drink;
 
-  String name;
-  List<Trick> tricks;
-  Food food;
-  Drink drink;
-
- public Fox(){
+  public Fox(){
     name = "Juniper";
     tricks = new ArrayList<>();
-    food = new Food("gummybears");
-    drink = new Drink("water");
+    food = "gummybears";
+    drink = "water";
+ }
+
+  public String getFood() {
+    return food;
   }
 
-  public String getFoodName(){
-   return food.name;
-  }
-
-  public String getDrinkName(){
-    return drink.name;
+  public String getDrink() {
+    return drink;
   }
 
   public int getTricksSize() {
@@ -35,12 +32,11 @@ public class Fox {
     return tricks;
   }
 
-  public void setFood(String name){
-    Food food = new Food(name);
+  public void setFood(String food) {
+    this.food = food;
   }
 
-  public void setDrink(String name){
-    Drink drink = new Drink(name);
+  public void setDrink(String drink) {
+    this.drink = drink;
   }
-
 }

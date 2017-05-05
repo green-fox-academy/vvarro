@@ -13,27 +13,21 @@
     <li>Trick Center</li>
   </a>
 </ul>
-<form method="post" action="/nutritionstore">
-  <input type="text" name="newfood"/>
-  <input type="submit" value="Add food"/>
-  <input type="text" name="newDrink"/>
-  <input type="submit" value="Add drink"/>
-</form>
 <p></p>
-<form method="get" action="/nutritionstore">
-  <label>Food</label>
-  <select name="Food">
-    <option value="Lollipop">Lollipop</option>
-    <option value="Cheese">Cheese</option>
-    <option value="Bread">Bread</option>
+  <form th:action="@{/addnutrition}" th:object="${fox}" th:method="POST">
+    <label>Food</label>
+  <select th:field="*{food}">
+    <option th:text="Lollipop" th:value="lollipop">Food</option>
+    <option th:text="Cheese" th:value="cheese">Food</option>
+    <option th:text="Gummybears" th:value="gummybears">Food</option>
   </select>
   <label>Drink</label>
-  <select name="Drink">
-    <option value="Milk">Milk</option>
-    <option value="Water">Water</option>
-    <option value="Tea">Tea</option>
+    <select th:field="*{drink}">
+    <option th:text="Milk" value="milk">Drink</option>
+    <option th:text="Water" value="water">Drink</option>
+    <option th:text="Tea" value="tea">Drink</option>
   </select>
-  <input type="submit" value="Change"/>
+    <button type="submit">Change</button>
 </form>
 </body>
 </html>
