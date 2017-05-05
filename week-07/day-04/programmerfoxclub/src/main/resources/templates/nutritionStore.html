@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>ProgrammerFoxClub</title>
+  <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<ul>
+  <a href="#">
+    <li>Information</li>
+    <li>Nutrition Store</li>
+    <li>Trick Center</li>
+  </a>
+</ul>
+<form method="post" action="/nutritionstore">
+  <input type="text" name="newfood"/>
+  <input type="submit" value="Add food"/>
+  <input type="text" name="newDrink"/>
+  <input type="submit" value="Add drink"/>
+</form>
+<p></p>
+<form method="get" action="/nutritionstore">
+  <label>Food</label>
+  <select name="Food">
+    <option value="Lollipop">Lollipop</option>
+    <option value="Cheese">Cheese</option>
+    <option value="Bread">Bread</option>
+  </select>
+  <label>Drink</label>
+  <select name="Drink">
+    <option value="Milk">Milk</option>
+    <option value="Water">Water</option>
+    <option value="Tea">Tea</option>
+  </select>
+  <input type="submit" value="Change"/>
+</form>
+</body>
+</html>
