@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Fox {
   public String name;
-  public List<Trick> tricks;
+  public List<Trick> juniperTricks;
   public String food;
   public String drink;
 
   public Fox(){
     name = "Juniper";
-    tricks = new ArrayList<>();
+    juniperTricks = new ArrayList<>();
     food = "gummybears";
     drink = "water";
  }
@@ -25,15 +25,20 @@ public class Fox {
   }
 
   public int getTricksSize() {
-    return tricks.size();
+    return juniperTricks.size();
   }
 
   public List<Trick> getTricks() {
-    return tricks;
+    return juniperTricks;
   }
 
   public void setFood(String food) {
     this.food = food;
+  }
+
+  public void learnTrick(String trickName) {
+    Trick trick = new Trick(trickName);
+    juniperTricks.add(trick);
   }
 
   public void setDrink(String drink) {

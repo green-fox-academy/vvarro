@@ -10,4 +10,8 @@ public class Trick {
     id = lastId;
     lastId++;
   }
+
+  public String getName() {
+    return name;
+  }
 }

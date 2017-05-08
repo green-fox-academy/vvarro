@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
   @Autowired
   Fox fox;
+  TrickList trickList;
 
   @RequestMapping("/")
   public String index(Model model) {
@@ -19,7 +20,7 @@ public class MainController {
   }
 
   @RequestMapping("/nutritionstore")
-  public String showPage(Model model) {
+  public String nutritionstore(Model model) {
     model.addAttribute("fox", fox);
     return "nutritionstore";
   }
@@ -34,6 +35,13 @@ public class MainController {
   @RequestMapping("/trickcenter")
   public String trickCenter(Model model) {
     model.addAttribute("fox", fox);
-    return "trickCenter";
+    model.addAttribute("tricklist", trickList);
+    return "trickcenter";
+  }
+
+  @PostMapping("/learntrick")
+  public String learnTrick(@RequestParam("trick") String trick) {
+    fox.learnTrick(trick);
+    return "redirect:/trickcenter";
   }
 }

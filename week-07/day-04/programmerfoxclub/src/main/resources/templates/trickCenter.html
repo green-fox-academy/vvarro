@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <title>ProgrammerFoxClub</title>
-  <link rel="stylesheet" th:href="@{/style.css}" />
+  <link rel="stylesheet" th:href="@{/style.css}"/>
 </head>
 <body>
 <ul>
-  <a href="#">
-    <li>Information</li>
-    <li>Nutrition Store</li>
-    <li>Trick Center</li>
-  </a>
+  <li><a href="/">Information</a></li>
+  <li><a href="/nutritionstore">Nutrition Store</a></li>
+  <li><a href="/trickcenter">Trick Center</a></li>
 </ul>
-<form method="post" action="/trickcenter">
-  <label>Tricks</label>
-  <select name="Tricks">
-    <option value="Coffee">make a coffee</option>
-    <option value="Music">play the piano</option>
-    <option value="Sleep">have a nap</option>
+
+<form th:action="@{/learntrick}" th:object="${fox}" th:method="POST">
+  <label>Trick List</label>
+  <select th:field="*{juniperTricks}">
+    <option th:text="Make a coffee" th:value="coffee">Trick</option>
+    <option th:text="Steal food" th:value="steal food">Trick</option>
   </select>
-  <input type="submit" value="Learn"/>
+  <button type="submit">Learn</button>
 </form>
 </body>
 </html>
