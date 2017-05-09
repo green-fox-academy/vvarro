@@ -4,6 +4,7 @@ import com.greenfoxacademy.connecthtml.repository.TodoRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/todo")
@@ -15,10 +16,11 @@ public class TodoController {
   }
 
     @RequestMapping(value ={"","/list"})
-  public String list(Model model) {
+  public String list(Model model,  @RequestParam(name = "isActive", required = false) String active) {
+    model.addAttribute("active", active);
     model.addAttribute("todos", todoRepository.findAll());
     return "todolist";
   }
 
-  
+
 }

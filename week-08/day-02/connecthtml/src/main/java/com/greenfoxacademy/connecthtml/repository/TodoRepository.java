@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Component
 public interface TodoRepository extends CrudRepository<Todo, Long> {
-
 }
