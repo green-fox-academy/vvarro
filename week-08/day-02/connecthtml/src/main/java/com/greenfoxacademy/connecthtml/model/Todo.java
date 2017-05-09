@@ -1,4 +1,4 @@
-package com.greenfoxacademy.listingtodos.model;
+package com.greenfoxacademy.connecthtml.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
-package com.greenfoxacademy.listingtodos.repository;
+package com.greenfoxacademy.connecthtml.repository;
 
-import com.greenfoxacademy.listingtodos.model.Todo;
+import com.greenfoxacademy.connecthtml.model.Todo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;

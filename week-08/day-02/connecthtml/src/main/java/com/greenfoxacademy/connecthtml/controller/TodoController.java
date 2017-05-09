@@ -1,4 +1,4 @@
-package com.greenfoxacademy.listingtodos.controller;
+package com.greenfoxacademy.connecthtml.controller;
 
 import com.greenfoxacademy.listingtodos.repository.TodoRepository;
 import org.springframework.stereotype.Controller;
