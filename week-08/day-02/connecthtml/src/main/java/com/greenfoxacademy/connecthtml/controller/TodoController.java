@@ -1,6 +1,6 @@
 package com.greenfoxacademy.connecthtml.controller;
 
-import com.greenfoxacademy.listingtodos.repository.TodoRepository;
+import com.greenfoxacademy.connecthtml.repository.TodoRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
