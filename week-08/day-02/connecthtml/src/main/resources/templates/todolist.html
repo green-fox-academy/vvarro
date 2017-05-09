@@ -2,12 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>ToDoApp</title>
+  <title>TodoApp</title>
 </head>
 <body>
 <h1>Todos for today:</h1>
-<ul th:each="todo : ${todos}">
-    <li th:text="${todo.title}"></li>
-  </ul>
+<table border="1">
+<tr>
+  <th>ID</th>
+  <th>ACTION</th>
+  <th>DONE</th>
+  <th>URGENT</th>
+</tr>
+<tr th:each="todo : ${todos}">
+  <th th:text="${todo.id}"></th>
+  <th th:text="${todo.title}"></th>
+  <th th:text="${todo.isDone()}"></th>
+  <th th:text="${todo.isUrgent()}"></th>
+</tr>
+</table>
 </body>
 </html>

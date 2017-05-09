@@ -31,4 +31,11 @@ public class Todo {
     isDone = false;
   }
 
+  public String isUrgent() {
+    return String.valueOf(isUrgent);
+  }
+
+  public String isDone() {
+    return String.valueOf(isDone);
+  }
 }
