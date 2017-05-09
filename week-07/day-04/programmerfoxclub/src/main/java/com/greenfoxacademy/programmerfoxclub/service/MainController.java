@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
+
   @Autowired
   Fox fox;
   TrickList trickList;
@@ -26,7 +27,8 @@ public class MainController {
   }
 
   @PostMapping("/addnutrition")
-  public String addNutrition(@RequestParam("food") String food, @RequestParam("drink") String drink) {
+  public String addNutrition(@RequestParam("food") String food,
+      @RequestParam("drink") String drink) {
     fox.setFood(food);
     fox.setDrink(drink);
     return "redirect:/";

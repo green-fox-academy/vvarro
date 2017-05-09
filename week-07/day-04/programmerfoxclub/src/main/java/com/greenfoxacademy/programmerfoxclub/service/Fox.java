@@ -4,17 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fox {
+
   public String name;
   public List<Trick> juniperTricks;
   public String food;
   public String drink;
 
-  public Fox(){
+  public Fox() {
     name = "Juniper";
     juniperTricks = new ArrayList<>();
     food = "gummybears";
     drink = "water";
- }
+  }
 
   public String getFood() {
     return food;
