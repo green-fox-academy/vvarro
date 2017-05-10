@@ -18,8 +18,8 @@ public class DoublingController {
   }
 
   @ExceptionHandler(IllegalArgumentException.class)
-  public ExceptionController getError(IllegalArgumentException ex){
-    return new ExceptionController("Please provide an input!");
+  public com.greenfoxacademy.frontend.Doubling.ExceptionController getError(IllegalArgumentException ex){
+    return new com.greenfoxacademy.frontend.Doubling.ExceptionController("Please provide an input!");
   }
 
 }
