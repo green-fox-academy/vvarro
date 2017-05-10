@@ -1,6 +1,7 @@
 package com.greenfoxacademy.frontend.Doubling;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,4 +16,10 @@ public class DoublingController {
     doubling.setReceived(input);
     return new Doubling(input);
   }
+
+  @ExceptionHandler(IllegalArgumentException.class)
+  public ExceptionController getError(IllegalArgumentException ex){
+    return new ExceptionController("Please provide an input!");
+  }
+
 }
