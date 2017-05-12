@@ -1,39 +1,46 @@
 package com.greenfoxacademy.reddit.model;
 
+import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.springframework.stereotype.Component;
 
-@Component
 @Entity
 public class Post {
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  int id;
+  long id;
   String title;
   String href;
-  long timestamp;
+  Timestamp timestamp;
   int score;
 
   public Post() {
-    this.timestamp = System.currentTimeMillis() % 1000;
+    this.timestamp = new Timestamp(System.currentTimeMillis());
     this.score = 0;
   }
 
   public Post(String title, String href) {
     this.title = title;
     this.href = href;
-    this.timestamp = System.currentTimeMillis() % 1000;
+    this.timestamp = new Timestamp(System.currentTimeMillis());
     this.score = 0;
   }
 
-  public int getId() {
+  public Post(String title, String href, Timestamp timestamp, int score) {
+    this.title = title;
+    this.href = href;
+    this.timestamp = new Timestamp(System.currentTimeMillis());
+    this.score = score;
+  }
+
+  public long getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(long id) {
     this.id = id;
   }
 
@@ -53,11 +60,11 @@ public class Post {
     this.href = href;
   }
 
-  public long getTimestamp() {
+  public Timestamp getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(long timestamp) {
+  public void setTimestamp(Timestamp timestamp) {
     this.timestamp = timestamp;
   }
 
@@ -67,5 +74,13 @@ public class Post {
 
   public void setScore(int score) {
     this.score = score;
+  }
+
+  public void upVote() {
+    score += 1;
+  }
+
+  public void downVote() {
+    score -= 1;
   }
 }
