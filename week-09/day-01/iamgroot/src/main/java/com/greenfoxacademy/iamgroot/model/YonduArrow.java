@@ -1,15 +1,11 @@
 package com.greenfoxacademy.iamgroot.model;
 
 public class YonduArrow {
-  Double distance;
-  Double time;
-  Double speed;
+  double distance;
+  double time;
+  double speed;
 
-  public YonduArrow() {
-
-  }
-
-  public YonduArrow(Double distance, Double time) {
+  public YonduArrow(double distance, double time) {
     this.distance = distance;
     this.time = time;
     this.speed = distance / time;
@@ -19,23 +15,23 @@ public class YonduArrow {
     return distance;
   }
 
-  public void setDistance(Double distance) {
+  public void setDistance(double distance) {
     this.distance = distance;
   }
 
-  public Double getTime() {
+  public double getTime() {
     return time;
   }
 
-  public void setTime(Double time) {
+  public void setTime(double time) {
     this.time = time;
   }
 
-  public Double getSpeed() {
+  public double getSpeed() {
     return speed;
   }
 
-  public void setSpeed(Double speed) {
+  public void setSpeed(double speed) {
     this.speed = speed;
   }
 }
