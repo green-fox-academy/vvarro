@@ -54,7 +54,7 @@ public class PostsController {
   }
 
   @RequestMapping(value = "", method = RequestMethod.DELETE)
-  public Posts deletePost(@RequestParam(value = "deleteid", required = true) long id) {
+  public Posts deletePost(@RequestParam(value = "message") String received) {
     postRepository.delete(postRepository.findOne(id));
     posts.setPosts(postRepository.findAll());
     return posts;
