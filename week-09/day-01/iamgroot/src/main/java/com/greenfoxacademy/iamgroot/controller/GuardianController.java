@@ -38,7 +38,7 @@ public class GuardianController {
     CargoStatus cargoStatus = new CargoStatus(caliber, amount);
     shipCargoStatus.addCaliber(caliber, amount);
     shipCargoStatus.setShipstatus(shipCargoStatus.getShipstatusInt() + ((int)(amount*100)/12500));
-    if (shipCargoStatus.getShipstatusInt() >= 12500) {
+    if ((shipCargoStatus.getShipstatus().equals("full")) || (shipCargoStatus.getShipstatus().equals("overloaded"))){
       shipCargoStatus.setReady(true);
     }
     cargoStatus.setReady(shipCargoStatus.isReady());

@@ -8,19 +8,17 @@ public class ShipCargoStatus {
   int caliber30;
   int caliber50;
   int shipstatus;
+  boolean ready;
 
   public boolean isReady() {
     return ready;
   }
-
-  boolean ready;
 
   public ShipCargoStatus() {
     caliber25 = 0;
     caliber30 = 0;
     caliber50 = 0;
     shipstatus = 0;
-    ready = false;
   }
 
   public void addCaliber(String caliber, double amount) {
@@ -79,7 +77,6 @@ public class ShipCargoStatus {
   public void setShipstatus(int shipstatus) {
     this.shipstatus = shipstatus;
   }
-
 
   public void setReady(boolean ready) {
     this.ready = ready;

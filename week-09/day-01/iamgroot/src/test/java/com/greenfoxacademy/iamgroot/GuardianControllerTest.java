@@ -62,4 +62,27 @@ public class GuardianControllerTest {
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.error").value("I am Groot!"));
   }
+
+  @Test
+  public void WithQueryParam_ReceiveShipStatusEmpty() throws Exception {
+    mockMvc.perform(get("/rocket"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.shipstatus").value("empty"));
+  }
+
+  @Test
+  public void WithQueryParam_ReceiveShipStatusFourty() throws Exception {
+    mockMvc.perform(get("/rocket/fill?caliber=.50&amount=5000"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.shipstatus").value("40%"));
+  }
+
+  @Test
+  public void WithQueryParam_ReceiveShipStatusFull() throws Exception {
+    mockMvc.perform(get("/rocket/fill?caliber=.50&amount=12500"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.ready").value("true"))
+        .andExpect(jsonPath("$.shipstatus").value("full"));
+  }
+
 }
