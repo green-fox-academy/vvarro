@@ -13,6 +13,5 @@ public class ConnecthtmlApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
 	}
 }
