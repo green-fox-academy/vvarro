@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GuardianController {
 
-  ShipCargoStatus shipCargoStatus;
-  PlayList playList;
-  SongRepository songRepository;
+  public ShipCargoStatus shipCargoStatus;
+  public PlayList playList;
+  public SongRepository songRepository;
 
   public GuardianController(SongRepository songRepository) {
     this.songRepository = songRepository;
@@ -86,31 +86,17 @@ public class GuardianController {
     return playList;
   }
 
-  @RequestMapping(value = "/awsome",  method = RequestMethod.DELETE)
+  @RequestMapping(value = "/awsome", method = RequestMethod.DELETE)
   public PlayList deletePost(@RequestParam(value = "deleteid", required = true) long id) {
     songRepository.delete(songRepository.findOne(id));
     playList.setPlaylist(songRepository.findAll());
     return playList;
   }
 
-  @RequestMapping("/awsome/listall")
-  public PlayList listSongsByGenre(@RequestParam(value = "genre") String genre) {
-    PlayList listGenre = new PlayList();
-    listGenre.setPlaylist(songRepository.findAllByGenreContains(genre));
-    return listGenre;
-  }
-
-  @RequestMapping("/awsome/listall")
-  public PlayList listSongsByAuthor(@RequestParam(value = "author") String author) {
-    PlayList listAuthor = new PlayList();
-    listAuthor.setPlaylist(songRepository.findAllByAuthorContains(author));
-    return listAuthor;
-  }
-
-  @RequestMapping("/awsome/listall")
-  public PlayList listSongsByYear(@RequestParam(value = "year") String year) {
+  @RequestMapping("/awsome/listall/{year}")
+  public PlayList listSongsByYear(@PathVariable(value = "year") String year) {
     PlayList listYear = new PlayList();
-    listYear.setPlaylist(songRepository.findAllByYearIsContaining(year));
+    listYear.setPlaylist(songRepository.findAllByYear(year));
     return listYear;
   }
 
@@ -141,5 +127,4 @@ public class GuardianController {
     return new com.greenfoxacademy.iamgroot.controller.ExceptionController(
         "I am Groot!");
   }
-
 }

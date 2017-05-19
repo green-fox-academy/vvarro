@@ -8,9 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Component
 public interface SongRepository extends CrudRepository<Song, Long> {
-  Iterable<Song> findAllByGenreContains(String genre);
-  Iterable<Song> findAllByAuthorContains(String author);
-  Iterable<Song> findAllByYearIsContaining(String year);
+  Iterable<Song> findAllByYear(String year);
   Iterable<Song> findFirstByOrderByRatingDesc();
   Iterable<Song> findFirst3ByOrderByRatingDesc();
   Iterable<Song> findFirst5ByOrderByRatingDesc();
