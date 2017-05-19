@@ -1,7 +1,9 @@
 package com.greenfoxacademy.iamgroot.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ShipCargoStatus {
 
   int caliber25;

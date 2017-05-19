@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AwsomeMixApplication.class)
+@SpringBootTest(classes = IamgrootApplication.class)
 @WebAppConfiguration
 @EnableWebMvc
 public class GuardianControllerTest {

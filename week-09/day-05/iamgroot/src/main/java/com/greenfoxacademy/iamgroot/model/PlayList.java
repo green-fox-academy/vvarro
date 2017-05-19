@@ -1,20 +1,22 @@
 package com.greenfoxacademy.iamgroot.model;
 
 import java.util.ArrayList;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PlayList {
 
-  private Iterable<Song> playlist;
+  public Iterable<Song> playlist;
 
   public PlayList() {
     this.playlist = new ArrayList<>();
   }
 
-  public Iterable<Song> getSong() {
+  public Iterable<Song> getPlaylist() {
     return playlist;
   }
 
-  public void setSong(Iterable<Song> playlist) {
+  public void setPlaylist(Iterable<Song> playlist) {
     this.playlist = playlist;
   }
 }
