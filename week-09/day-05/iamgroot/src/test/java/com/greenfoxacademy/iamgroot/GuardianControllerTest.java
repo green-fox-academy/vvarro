@@ -23,17 +23,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @WebAppConfiguration
 @EnableWebMvc
 public class GuardianControllerTest {
-
   private MockMvc mockMvc;
-
   @Autowired
   private WebApplicationContext webApplicationContext;
-
   @Before
   public void setup() throws Exception {
     this.mockMvc = webAppContextSetup(webApplicationContext).build();
   }
-
   @Test
   public void WithQueryParam_ReceiveGrootGreet() throws Exception {
     mockMvc.perform(get("/groot?message=somemessage"))

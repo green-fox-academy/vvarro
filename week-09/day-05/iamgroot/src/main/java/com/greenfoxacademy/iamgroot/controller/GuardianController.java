@@ -1,9 +1,7 @@
 package com.greenfoxacademy.iamgroot.controller;
 
-import com.greenfoxacademy.iamgroot.model.CargoStatus;
 import com.greenfoxacademy.iamgroot.model.GrootMessage;
 import com.greenfoxacademy.iamgroot.model.PlayList;
-import com.greenfoxacademy.iamgroot.model.ShipCargoStatus;
 import com.greenfoxacademy.iamgroot.model.Song;
 import com.greenfoxacademy.iamgroot.repository.SongRepository;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -20,41 +18,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GuardianController {
 
-  public ShipCargoStatus shipCargoStatus;
   public PlayList playList;
   public SongRepository songRepository;
 
   public GuardianController(SongRepository songRepository) {
     this.songRepository = songRepository;
     this.playList = new PlayList();
-    this.shipCargoStatus = new ShipCargoStatus();
   }
 
   @RequestMapping("/groot")
   public GrootMessage getGrootMessage(@RequestParam(value = "message") String received) {
     GrootMessage grootMessage = new GrootMessage(received);
     return grootMessage;
-  }
-
-  @RequestMapping("/rocket")
-  public ShipCargoStatus getShipCargoStatus() {
-    return shipCargoStatus;
-  }
-
-  @RequestMapping("/rocket/fill")
-  public CargoStatus getCargoStatus(@RequestParam("caliber") String caliber,
-      @RequestParam("amount") double amount) {
-    CargoStatus cargoStatus = new CargoStatus(caliber, amount);
-    shipCargoStatus.addCaliber(caliber, amount);
-    shipCargoStatus
-        .setShipstatus(shipCargoStatus.getShipstatusInt() + ((int) (amount * 100) / 12500));
-    if ((shipCargoStatus.getShipstatus().equals("full")) || (shipCargoStatus.getShipstatus()
-        .equals("overloaded"))) {
-      shipCargoStatus.setReady(true);
-    }
-    cargoStatus.setReady(shipCargoStatus.isReady());
-    cargoStatus.setShipstatus(shipCargoStatus.getShipstatus());
-    return cargoStatus;
   }
 
   @RequestMapping("/awsome")
