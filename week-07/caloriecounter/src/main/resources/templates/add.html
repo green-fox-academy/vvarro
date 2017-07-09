@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Add and edit meal</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta charset="utf-8"/>
+</head>
+<body>
+<h3>Add new meal</h3>
+<p th:if="${!(errors.equals(''))}" th:text="'These are the missing field(s): ' + ${errors} "></p>
+<form th:object="${meal}" method="post">
+  <label>Date: </label>
+  <input type="date" th:field="*{date}"/>
+  <label>Type</label>
+  <select th:field="*{type}">
+    <option th:each="type: ${types}"
+            th:value="${type.name}"
+            th:text="${type.name}"
+            th:selected="${type.name == meal.type}">>Type
+    </option>
+  </select>
+  <label>Description:</label>
+  <input type="text" th:field="*{description}"/>
+  <label>Calories: </label>
+  <input type="number" th:field="*{calories}"/>
+  <button type="submit" name="action" value="save">Save</button>
+  <button type="submit" name="action" value="cancel">Cancel</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Calorie counter</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h3>Calorie Counter App</h3>
+<p></p>
+<p th:text="'Number of meals: ' + ${statistics.numberOfMeals}"></p>
+<p th:text="'Total calories: '+ ${statistics.totalCalories}"></p>
+<p></p>
+<a th:href="@{'/add'}">
+  <button type="submit" value="add" class="link-button">Add a new meal</button>
+</a>
+<p></p>
+<table border="1" style="width:300px">
+  <thead>
+  <tr>
+    <td>Meal date</td>
+    <td>Type</td>
+    <td>Description</td>
+    <td>Calories</td>
+    <td>Functions</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="meal : ${meals}">
+    <td th:utext="${meal.date}">Date</td>
+    <td th:utext="${meal.type}">Type</td>
+    <td th:utext="${meal.description}">Description</td>
+    <td th:utext="${meal.calories}">Calories</td>
+    <td>
+      <!--<form method="GET" th:action="@{/edit(id=${meal.id})}">-->
+        <!--<button type="submit" value="edit" class="link-button">Edit</button>-->
+      <!--</form>-->
+      <a th:href="@{/edit(id=${meal.id})}">Edit</a>
+      <form method="POST" th:action="@{/delete/{id}(id=${meal.id})}">
+        <button type="submit" value="delete" class="link-button">Delete</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
