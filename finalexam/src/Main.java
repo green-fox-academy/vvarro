@@ -4,5 +4,6 @@ public class Main {
     LetterFinder letterfinder = new LetterFinder();
     System.out.println(letterfinder.findCharLetter("finalexam", 'a'));
     System.out.println(letterfinder.findCharLetterMethod("finalexam", 'a'));
+    System.out.println(letterfinder.findStringLetter("finalexam", "a"));
   }
 }
